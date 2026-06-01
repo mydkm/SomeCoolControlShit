@@ -1,0 +1,18 @@
+Meeting on 5/31:
+
+Materials List:
+1 stm32
+(https://www.amazon.com/CANADUINO-STM32-Black-STM32F411CEU6-100MHz/dp/B0BH8BHB7M)
+1 gyroscope
+1 accelorometer
+(https://www.amazon.com/HiLetgo-MPU-6050-Accelerometer-Gyroscope-Converter/dp/B01DK83ZYQ/ref=sr_1_4?dib=eyJ2IjoiMSJ9.17CgYbfJeLaKBTknvMMfs2hSZclBP1pke_xwZRNADK6qMifPiKnhFYBjBmQ7UAp7xr_BFOsJG8-MIamYjcLyYDos67MM2gT8qWKs1foXEMMNp53i-aNnqSotZgw_Ccwwpm6qpDhSz2az27ozL6xqAKx3QME48vZknAc1OiI8hm2NQM3T9SorGoCQZZd1NjijI3_s1qcqVhUV8tMsWkLnYa4JWFHJTf_VHMNb24kpvV8.vpQLkqnHz7voOMW3M7IkEuMtXRIJEPeoKsxDx1Vr0VM&dib_tag=se&keywords=MPU6050&qid=1780272693&sr=8-4&th=1)
+3 motors (w/ encoder)
+(https://shop.iflight.com/ipower-motor-gm4108h-120t-brushless-gimbal-motor-pro217)
+4 M-F jumper wires
+(from Cooper)
+PETG
+(Eliezer has some)
+
+Code Stack:
+C++ for controls
+control toolbox from etc zurich
