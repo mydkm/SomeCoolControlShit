@@ -1,0 +1,2 @@
+# SomeCoolControlShit
+Gimbal Project
