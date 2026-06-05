@@ -12,6 +12,8 @@ float angle_y = 0.0f;
 
 unsigned long prev_time = 0;
 
+const int Alpha = 0.99; // complementary filter coefficient
+
 void mpu_init() {
     Wire.setSDA(PB7);
     Wire.setSCL(PB6);
@@ -70,22 +72,38 @@ void loop() {
     unsigned long now = micros();
     float dt = (now - prev_time) / 1000000.0f;
     prev_time = now;
-
     mpu_read();
 
-    float ax_g = ax / 16384.0f; 
-    float ay_g = ay / 16384.0f;
-    float az_g = az / 16384.0f;
-    float gx_dps = gx / 131.0f; 
-    float gy_dps = gy / 131.0f;
+    angle_x = angle_x + gx * dt; //gyroscope
+    angle_y = angle_y + gy * dt; //gyroscope
+
+    float acc_x_ang = atan2(ay, az) * 180 / PI; // angle about x
+    float acc_y_ang = atan2(ax, az) * 180 / PI; // angle about y
+    float ax_g = ax / 16384.0f ;
+    float ay_g = ay / 16384.0f ;
+    float az_g = az / 16384.0f ;
+    float gx_dps = gx / 131.0f;
+    float gy_dps = gy / 131.0f; 
+
+    float theta_x = Alpha * angle_x + (1 - Alpha) * acc_x_ang;
+    float theta_y = Alpha * angle_y + (1 - Alpha) * acc_y_ang;
 
     static unsigned long last_print = 0;
     if (millis() - last_print > 500) {
+        /*
         Serial.print("ax: "); Serial.print(ax_g, 4);
         Serial.print("  ay: "); Serial.print(ay_g, 4);
         Serial.print("  az: "); Serial.print(az_g, 4);
         Serial.print("  gx: "); Serial.print(gx_dps, 4);
         Serial.print("  gy: "); Serial.println(gy_dps, 4);
+        
+        Serial.print(" gyro_angle_x: "); Serial.print(angle_x, 2);
+        Serial.print(" gyro_angle_y: "); Serial.println(angle_y, 2);
+        Serial.print(" acc_angle_x: "); Serial.print(acc_x_ang, 2);
+        Serial.print(" acc_angle_y: "); Serial.println(acc_y_ang, 2);
+        */
+        Serial.print("comp_angle_x: "); Serial.print(theta_x, 2);
+        Serial.print("  comp_angle_y: "); Serial.println(theta_y, 2);
         last_print = millis();
     }
 
