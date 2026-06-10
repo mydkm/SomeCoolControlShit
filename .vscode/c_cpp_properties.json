@@ -10,6 +10,8 @@
             "includePath": [
                 "C:/Users/choel/OneDrive/Documents/PlatformIO/Projects/Gimbal Project/include",
                 "C:/Users/choel/OneDrive/Documents/PlatformIO/Projects/Gimbal Project/src",
+                "C:/Users/choel/OneDrive/Documents/PlatformIO/Projects/Gimbal Project/.pio/libdeps/genericSTM32F411CE/Simple FOC/src",
+                "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/SPI/src",
                 "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/Wire/src",
                 "C:/Users/choel/.platformio/packages/framework-arduinoststm32/cores/arduino/avr",
                 "C:/Users/choel/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32",
@@ -39,7 +41,6 @@
                 "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/Keyboard/src",
                 "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/Mouse/src",
                 "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/RGB_LED_TLC59731/src",
-                "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/SPI/src",
                 "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/Servo/src",
                 "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/SoftwareSerial/src",
                 "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/SrcWrapper/src",
@@ -53,6 +54,8 @@
                 "path": [
                     "C:/Users/choel/OneDrive/Documents/PlatformIO/Projects/Gimbal Project/include",
                     "C:/Users/choel/OneDrive/Documents/PlatformIO/Projects/Gimbal Project/src",
+                    "C:/Users/choel/OneDrive/Documents/PlatformIO/Projects/Gimbal Project/.pio/libdeps/genericSTM32F411CE/Simple FOC/src",
+                    "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/SPI/src",
                     "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/Wire/src",
                     "C:/Users/choel/.platformio/packages/framework-arduinoststm32/cores/arduino/avr",
                     "C:/Users/choel/.platformio/packages/framework-arduinoststm32/cores/arduino/stm32",
@@ -82,7 +85,6 @@
                     "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/Keyboard/src",
                     "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/Mouse/src",
                     "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/RGB_LED_TLC59731/src",
-                    "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/SPI/src",
                     "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/Servo/src",
                     "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/SoftwareSerial/src",
                     "C:/Users/choel/.platformio/packages/framework-arduinoststm32/libraries/SrcWrapper/src",
