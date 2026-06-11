@@ -110,12 +110,18 @@ void setup() {
     delay(100);
     calibrate();
     prev_time = micros();
-    // driver.voltage_power_supply = 12;
-    // driver.init();
+    driver.voltage_power_supply = 12;
+    driver.init();
+    motor.linkDriver(&driver);
+    motor.controller = MotionControlType::velocity_openloop;
+    motor.voltage_limit = 2;
+    motor.init();
+
 }
 
 
 void loop() {
+    motor.move(1);
     unsigned long now = micros();
     float dt = (now - prev_time) / 1000000.0f;
     prev_time = now;
@@ -143,7 +149,6 @@ void loop() {
 
     static unsigned long last_print = 0;
     if (millis() - last_print > 500) {
-        /*
         Serial.print("ax: "); Serial.print(ax_g, 4);
         Serial.print("  ay: "); Serial.print(ay_g, 4);
         Serial.print("  az: "); Serial.print(az_g, 4);
@@ -155,7 +160,7 @@ void loop() {
         Serial.print(" gyro_angle_y: "); Serial.println(angle_y, 2);
         Serial.print(" acc_angle_x: "); Serial.print(acc_x_ang, 2);
         Serial.print(" acc_angle_y: "); Serial.println(acc_y_ang, 2);
-        */
+        
         Serial.print("comp_angle_x: "); Serial.print(theta_x, 2);
         Serial.print("  comp_angle_y: "); Serial.print(theta_y, 2);
         Serial.print("  comp_angle_z: "); Serial.println(angle_z, 2);
@@ -164,5 +169,4 @@ void loop() {
 
     delay(5); 
 }
-
 
