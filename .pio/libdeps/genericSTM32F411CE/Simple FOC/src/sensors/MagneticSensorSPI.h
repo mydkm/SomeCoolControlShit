@@ -29,19 +29,14 @@ class MagneticSensorSPI: public Sensor{
      * @param cs  SPI chip select pin 
      * @param bit_resolution   sensor resolution bit number
      * @param angle_register  (optional) angle read register - default 0x3FFF
-     * @param clock_speed  (optional) SPI clock speed
      */
-    MagneticSensorSPI(int cs, int bit_resolution, int angle_register = 0, long clock_speed = NOT_SET);
-
-     /**
-     *  MagneticSensorSPI class constructor
+    MagneticSensorSPI(int cs, int bit_resolution, int angle_register = 0);
     /**
      *  MagneticSensorSPI class constructor
      * @param config   SPI config
      * @param cs  SPI chip select pin
-     * @param clock_speed  (optional) SPI clock speed
      */
-    MagneticSensorSPI(MagneticSensorSPIConfig_s config, int cs, long clock_speed = NOT_SET);
+    MagneticSensorSPI(MagneticSensorSPIConfig_s config, int cs);
 
     /** sensor initialise pins */
     void init(SPIClass* _spi = &SPI);

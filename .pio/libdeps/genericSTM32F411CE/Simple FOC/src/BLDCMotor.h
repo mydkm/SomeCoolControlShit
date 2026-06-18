@@ -18,13 +18,12 @@ class BLDCMotor: public FOCMotor
   public:
     /**
      BLDCMotor class constructor
-     @param pp  pole pairs number
-     @param R   motor phase resistance - [Ohm]
+     @param pp pole pairs number
+     @param R  motor phase resistance - [Ohm]
      @param KV  motor KV rating (1/K_bemf) - rpm/V
-     @param Lq  motor q-axis inductance - [H]
-     @param Ld  motor d-axis inductance - [H]
+     @param L  motor phase inductance - [H]
      */ 
-    BLDCMotor(int pp,  float R = NOT_SET, float KV = NOT_SET, float L_q = NOT_SET, float L_d = NOT_SET);
+    BLDCMotor(int pp,  float R = NOT_SET, float KV = NOT_SET, float L = NOT_SET);
     
     /**
      * Function linking a motor and a foc driver 
@@ -33,20 +32,46 @@ class BLDCMotor: public FOCMotor
      */
     virtual void linkDriver(BLDCDriver* driver);
 
-
-    float Ua, Ub, Uc;//!< Current phase voltages Ua,Ub and Uc set to motor
-
-    BLDCDriver* driver; //!< BLDCDriver instance
-    // Methods implementing the FOCMotor interface
+    /** 
+      * BLDCDriver link:
+      * - 3PWM 
+      * - 6PWM 
+    */
+    BLDCDriver* driver; 
     
     /**  Motor hardware init function */
-    int init() override;
+  	int init() override;
     /** Motor disable function */
   	void disable() override;
     /** Motor enable function */
     void enable() override;
 
     /**
+     * Function initializing FOC algorithm
+     * and aligning sensor's and motors' zero position 
+     */  
+    int initFOC() override;
+    /**
+     * Function running FOC algorithm in real-time
+     * it calculates the gets motor angle and sets the appropriate voltages 
+     * to the phase pwm signals
+     * - the faster you can run it the better Arduino UNO ~1ms, Bluepill ~ 100us
+     */ 
+    void loopFOC() override;
+
+    /**
+     * Function executing the control loops set by the controller parameter of the BLDCMotor.
+     * 
+     * @param target  Either voltage, angle or velocity based on the motor.controller
+     *                If it is not set the motor will use the target set in its variable motor.target
+     * 
+     * This function doesn't need to be run upon each loop execution - depends of the use case
+     */
+    void move(float target = NOT_SET) override;
+    
+    float Ua, Ub, Uc;//!< Current phase voltages Ua,Ub and Uc set to motor
+    
+  /**
     * Method using FOC to set Uq to the motor at the optimal angle
     * Heart of the FOC algorithm
     * 
@@ -56,28 +81,34 @@ class BLDCMotor: public FOCMotor
     */
     void setPhaseVoltage(float Uq, float Ud, float angle_el) override;
 
+  private:
+    // FOC methods 
+
+    /** Sensor alignment to electrical 0 angle of the motor */
+    int alignSensor();
+    /** Current sense and motor phase alignment */
+    int alignCurrentSense();
+    /** Motor and sensor alignment to the sensors absolute 0 angle  */
+    int absoluteZeroSearch();
+
+        
+    // Open loop motion control    
     /**
-     * Method estimating the Back EMF voltage based
-     * based on the current velocity and KV rating
+     * Function (iterative) generating open loop movement for target velocity
+     * it uses voltage_limit variable
      * 
-     * @param velocity Current motor velocity
+     * @param target_velocity - rad/s
      */
-    float estimateBEMF(float velocity) override;
-
-
-    // Methods overriding the FOCMotor default behavior
-
+    float velocityOpenloop(float target_velocity);
     /**
-     * Measure resistance and inductance of a BLDCMotor and print results to debug.
-     * If a sensor is available, an estimate of zero electric angle will be reported too.
-     * @param voltage The voltage applied to the motor
-     * @returns 0 for success, >0 for failure
+     * Function (iterative) generating open loop movement towards the target angle
+     * it uses voltage_limit and velocity_limit variables
+     * 
+     * @param target_angle - rad
      */
-    int characteriseMotor(float voltage){
-      return FOCMotor::characteriseMotor(voltage, 1.5f);
-    }
-    
-
+    float angleOpenloop(float target_angle);
+    // open loop variables
+    long open_loop_timestamp;
 };
 
 

@@ -23,7 +23,6 @@
  *  - Motors 
  *    - BLDC motors
  *    - Stepper motors
- *    - Hybrid Stepper motors
  * - Drivers 
  *    - BLDC drivers
  *    - Gimbal drivers
@@ -32,24 +31,12 @@
  *    - Encoders
  *    - Magnetic sensors
  *    - Hall sensors
+ *    - Open-loop control
  * - Microcontrollers 
  *    - Arduino
  *    - STM32
  *    - ESP32
  *    - Teensy
- *    - many more ...
- * 
- * @section getting_examples How to Use Examples
- * 
- * 1. **Arduino IDE**: Go to `File > Examples > Simple FOC > [category] > [example]`
- * 2. **PlatformIO**: Copy example code from the `examples/` directory
- * 3. **GitHub**: Browse examples at https://github.com/simplefoc/Arduino-FOC/tree/master/examples
- * 
- * Each example includes:
- * - Detailed comments explaining the code
- * - Hardware connection diagrams (where applicable)
- * - Expected behavior description
- * - Common troubleshooting tips
  * 
  * @section example_code Example code
  * @code
@@ -111,7 +98,6 @@ void loop() {
 
 #include "BLDCMotor.h"
 #include "StepperMotor.h"
-#include "HybridStepperMotor.h"
 #include "sensors/Encoder.h"
 #include "sensors/MagneticSensorSPI.h"
 #include "sensors/MagneticSensorI2C.h"

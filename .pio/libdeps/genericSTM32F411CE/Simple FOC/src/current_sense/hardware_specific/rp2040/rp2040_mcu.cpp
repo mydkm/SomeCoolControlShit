@@ -1,5 +1,5 @@
 
-#if defined(TARGET_RP2040) || defined(TARGET_RP2350)
+#if defined(TARGET_RP2040)
 
 
 #include "../../hardware_api.h"

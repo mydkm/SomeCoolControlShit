@@ -111,6 +111,7 @@ void setup() {
     calibrate();
     prev_time = micros();
     driver.voltage_power_supply = 12;
+    driver.pwm_frequency = 32000;
     driver.init();
     motor.linkDriver(&driver);
     motor.controller = MotionControlType::velocity_openloop;
@@ -153,11 +154,11 @@ void loop() {
         Serial.print("  ay: "); Serial.print(ay_g, 4);
         Serial.print("  az: "); Serial.print(az_g, 4);
         Serial.print("  gx: "); Serial.print(gx_dps, 4);
-        Serial.print("  gy: "); Serial.println(gy_dps, 4);
+        Serial.print("  gy: "); Serial.print(gy_dps, 4);
         Serial.print("  gz: "); Serial.println(gz_dps, 4);
 
         Serial.print(" gyro_angle_x: "); Serial.print(angle_x, 2);
-        Serial.print(" gyro_angle_y: "); Serial.println(angle_y, 2);
+        Serial.print(" gyro_angle_y: "); Serial.print(angle_y, 2);
         Serial.print(" acc_angle_x: "); Serial.print(acc_x_ang, 2);
         Serial.print(" acc_angle_y: "); Serial.println(acc_y_ang, 2);
         
@@ -169,4 +170,3 @@ void loop() {
 
     delay(5); 
 }
-
