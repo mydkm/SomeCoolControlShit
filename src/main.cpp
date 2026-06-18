@@ -11,7 +11,7 @@ int16_t ax, ay, az, gx, gy, gz;
 float angle_x = 0.0f;
 float angle_y = 0.0f;
 float angle_z = 0.0f;
-BLDCDriver3PWM driver = BLDCDriver3PWM(PA8, PA9, PA10);
+BLDCDriver3PWM driver = BLDCDriver3PWM(PA0, PA1, PA2);
 BLDCMotor motor = BLDCMotor(11);
 MagneticSensorSPI encoder = MagneticSensorSPI(AS5048_SPI, PA4);
 
@@ -107,22 +107,21 @@ void calibrate() {
 void setup() {
     Serial.begin(115200);
     mpu_init();
-    delay(100);
     calibrate();
     prev_time = micros();
     driver.voltage_power_supply = 12;
     driver.pwm_frequency = 32000;
     driver.init();
     motor.linkDriver(&driver);
-    motor.controller = MotionControlType::velocity_openloop;
-    motor.voltage_limit = 2;
+    motor.controller = MotionControlType::angle_openloop;
+    motor.voltage_limit = 12.0f;
     motor.init();
 
 }
 
 
 void loop() {
-    motor.move(1);
+    motor.move(20.0f);
     unsigned long now = micros();
     float dt = (now - prev_time) / 1000000.0f;
     prev_time = now;
@@ -167,6 +166,4 @@ void loop() {
         Serial.print("  comp_angle_z: "); Serial.println(angle_z, 2);
         last_print = millis();
     }
-
-    delay(5); 
 }
