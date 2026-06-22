@@ -15,9 +15,43 @@ BLDCDriver3PWM driver = BLDCDriver3PWM(PA0, PA1, PA2);
 BLDCMotor motor = BLDCMotor(11);
 MagneticSensorSPI encoder = MagneticSensorSPI(AS5048_SPI, PA4);
 
-unsigned long prev_time = 0;
+unsigned long prev_time = 0; // s
+float target_angle_x = 0.0f; // deg
 
 const float Alpha = 0.98f; // complementary filter coefficient
+
+// PID PARAMS (NEED TO BE TUNED)
+// outer loop
+float Kp_angle = 10.0f;
+float Ki_angle = 0.5f;
+float Kd_angle = 0.1f;
+
+// inner loop
+float Kp_velocity = 0.5f;
+float Ki_velocity = 0.1f;
+float Kd_velocity = 0.01f;
+
+// limits
+const float limit_angle = 45.0f; // degrees
+const float limit_torque = 2.0f; // volts
+
+// output ramps
+const float ramp_angle = 100.0f; // degrees/s
+const float ramp_torque = 2.0f; // volts/s
+
+PIDController PID_angle = PIDController(
+    Kp_angle, 
+    Ki_angle, 
+    Kd_angle, 
+    ramp_angle, 
+    limit_angle);
+PIDController PID_torque = PIDController(
+    Kp_velocity, 
+    Ki_velocity, 
+    Kd_velocity, 
+    ramp_torque, 
+    limit_torque);
+
 
 void mpu_init() {
     Wire.setSDA(PB7);
@@ -106,25 +140,46 @@ void calibrate() {
 
 void setup() {
     Serial.begin(115200);
+
+    driver.voltage_power_supply = 12.0f;
+    driver.voltage_limit = 6.0f; // absolute motor ceiling
+    motor.voltage_limit = limit_torque;
+    driver.pwm_frequency = 32000;
+
     mpu_init();
     calibrate();
-    prev_time = micros();
-    driver.voltage_power_supply = 12;
-    driver.pwm_frequency = 32000;
-    driver.init();
-    motor.linkDriver(&driver);
-    motor.controller = MotionControlType::angle_openloop;
-    motor.voltage_limit = 12.0f;
-    motor.init();
 
+    motor.controller = MotionControlType::torque;
+    motor.torque_controller = TorqueControlType::voltage;
+    
+    encoder.init();
+    driver.init();
+    motor.linkSensor(&encoder);
+    motor.linkDriver(&driver);
+
+    motor.init();
+    motor.initFOC();
+
+    PID_angle.reset();
+    PID_torque.reset();
+
+    prev_time = micros();
+
+    Serial.println("Setup complete.");
 }
 
 
 void loop() {
-    motor.move(20.0f);
+    motor.loopFOC();
     unsigned long now = micros();
     float dt = (now - prev_time) / 1000000.0f;
     prev_time = now;
+    if (dt <= 0.0f || dt > 0.1f) {
+        anglePID.reset();
+        ratePID.reset();
+        motor.move(0.0f);
+        return;
+    }
     mpu_read();
        
     float ax_g = ax / 16384.0f ;
@@ -146,6 +201,16 @@ void loop() {
 
     angle_x = theta_x;
     angle_y = theta_y;
+
+    // outer loop
+    float angle_error_x = target_angle_x - theta_x;
+    float target_velocity = PID_angle(angle_error_x);
+
+    // inner loop
+    float velocity_error_x = target_velocity - gx_dps;
+    float target_torque = PID_torque(velocity_error_x);
+
+    motor.move(target_torque);
 
     static unsigned long last_print = 0;
     if (millis() - last_print > 500) {
