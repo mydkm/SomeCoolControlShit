@@ -4724,7 +4724,7 @@ Linker script and memory map
                 0x08000000                g_pfnVectors
                 0x08000198                        . = ALIGN (0x4)
 
-.text           0x08000198     0xbde8
+.text           0x08000198     0xbde0
                 0x08000198                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000198      0x378 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
@@ -5807,826 +5807,826 @@ Linker script and memory map
                 0x080078f8                calibrate()
  .text.setup    0x08007a34       0x64 .pio/build/genericSTM32F411CE/src/main.cpp.o
                 0x08007a34                setup
- .text.loop     0x08007a98      0x31c .pio/build/genericSTM32F411CE/src/main.cpp.o
+ .text.loop     0x08007a98      0x314 .pio/build/genericSTM32F411CE/src/main.cpp.o
                 0x08007a98                loop
  .text._ZN5Print17availableForWriteEv
-                0x08007db4        0x4 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007db4                Print::availableForWrite()
+                0x08007dac        0x4 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007dac                Print::availableForWrite()
  .text._ZN7TwoWire9availableEv
-                0x08007db8        0x8 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007db8                TwoWire::available()
+                0x08007db0        0x8 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007db0                TwoWire::available()
  .text._ZN7TwoWire4readEv
-                0x08007dc0       0x1a .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007dc0                TwoWire::read()
+                0x08007db8       0x1a .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007db8                TwoWire::read()
  .text._ZN7TwoWire4peekEv
-                0x08007dda       0x12 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007dda                TwoWire::peek()
+                0x08007dd2       0x12 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007dd2                TwoWire::peek()
  .text._ZN7TwoWire16onRequestServiceEP5i2c_s
-                0x08007dec       0x16 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007dec                TwoWire::onRequestService(i2c_s*)
- *fill*         0x08007e02        0x2 
+                0x08007de4       0x16 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007de4                TwoWire::onRequestService(i2c_s*)
+ *fill*         0x08007dfa        0x2 
  .text._ZN7TwoWireC2Emm
-                0x08007e04       0xcc .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007e04                TwoWire::TwoWire(unsigned long, unsigned long)
-                0x08007e04                TwoWire::TwoWire(unsigned long, unsigned long)
+                0x08007dfc       0xcc .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007dfc                TwoWire::TwoWire(unsigned long, unsigned long)
+                0x08007dfc                TwoWire::TwoWire(unsigned long, unsigned long)
  .text._ZN7TwoWire3endEv
-                0x08007ed0       0x28 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007ed0                TwoWire::end()
+                0x08007ec8       0x28 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007ec8                TwoWire::end()
  .text._ZN7TwoWireD2Ev
-                0x08007ef8       0x28 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007ef8                TwoWire::~TwoWire()
-                0x08007ef8                TwoWire::~TwoWire()
+                0x08007ef0       0x28 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007ef0                TwoWire::~TwoWire()
+                0x08007ef0                TwoWire::~TwoWire()
  .text._ZN7TwoWire17beginTransmissionEi
-                0x08007f20       0x10 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007f20                TwoWire::beginTransmission(int)
+                0x08007f18       0x10 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007f18                TwoWire::beginTransmission(int)
  .text._ZN7TwoWire16allocateRxBufferEj
-                0x08007f30       0x24 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007f30                TwoWire::allocateRxBuffer(unsigned int)
+                0x08007f28       0x24 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007f28                TwoWire::allocateRxBuffer(unsigned int)
  .text._ZN7TwoWire16onReceiveServiceEP5i2c_s
-                0x08007f54       0x4c .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007f54                TwoWire::onReceiveService(i2c_s*)
+                0x08007f4c       0x4c .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007f4c                TwoWire::onReceiveService(i2c_s*)
  .text._ZN7TwoWire16allocateTxBufferEj
-                0x08007fa0       0x32 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007fa0                TwoWire::allocateTxBuffer(unsigned int)
+                0x08007f98       0x32 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007f98                TwoWire::allocateTxBuffer(unsigned int)
  .text._ZN7TwoWire5writeEh
-                0x08007fd2       0x42 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08007fd2                TwoWire::write(unsigned char)
+                0x08007fca       0x42 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08007fca                TwoWire::write(unsigned char)
  .text._ZN7TwoWire5writeEPKhj
-                0x08008014       0x42 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08008014                TwoWire::write(unsigned char const*, unsigned int)
+                0x0800800c       0x42 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x0800800c                TwoWire::write(unsigned char const*, unsigned int)
  .text._ZN7TwoWire13resetRxBufferEv
-                0x08008056       0x10 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08008056                TwoWire::resetRxBuffer()
+                0x0800804e       0x10 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x0800804e                TwoWire::resetRxBuffer()
  .text._ZN7TwoWire13resetTxBufferEv
-                0x08008066       0x10 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08008066                TwoWire::resetTxBuffer()
+                0x0800805e       0x10 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x0800805e                TwoWire::resetTxBuffer()
  .text._ZN7TwoWire15endTransmissionEh
-                0x08008076       0x46 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08008076                TwoWire::endTransmission(unsigned char)
+                0x0800806e       0x46 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x0800806e                TwoWire::endTransmission(unsigned char)
  .text._ZN7TwoWire11requestFromEhhmhh
-                0x080080bc       0x94 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x080080bc                TwoWire::requestFrom(unsigned char, unsigned char, unsigned long, unsigned char, unsigned char)
+                0x080080b4       0x94 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x080080b4                TwoWire::requestFrom(unsigned char, unsigned char, unsigned long, unsigned char, unsigned char)
  .text._ZN7TwoWire11requestFromEhhh
-                0x08008150       0x12 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08008150                TwoWire::requestFrom(unsigned char, unsigned char, unsigned char)
+                0x08008148       0x12 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08008148                TwoWire::requestFrom(unsigned char, unsigned char, unsigned char)
  .text._ZN7TwoWire5flushEv
-                0x08008162       0x18 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08008162                TwoWire::flush()
- *fill*         0x0800817a        0x2 
+                0x0800815a       0x18 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x0800815a                TwoWire::flush()
+ *fill*         0x08008172        0x2 
  .text._ZN7TwoWire10recoverBusEv
-                0x0800817c       0xcc .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x0800817c                TwoWire::recoverBus()
+                0x08008174       0xcc .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08008174                TwoWire::recoverBus()
  .text._ZN7TwoWire5beginEhbb
-                0x08008248       0x9c .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x08008248                TwoWire::begin(unsigned char, bool, bool)
+                0x08008240       0x9c .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x08008240                TwoWire::begin(unsigned char, bool, bool)
  .text._ZN7TwoWire5beginEb
-                0x080082e4        0xa .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x080082e4                TwoWire::begin(bool)
- *fill*         0x080082ee        0x2 
+                0x080082dc        0xa .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x080082dc                TwoWire::begin(bool)
+ *fill*         0x080082e6        0x2 
  .text.startup._GLOBAL__sub_I__ZN7TwoWireC2Emm
-                0x080082f0       0x10 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x080082e8       0x10 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
  .text.exit._GLOBAL__sub_D__ZN7TwoWireC2Emm
-                0x08008300        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x080082f8        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
  .text.i2c_init
-                0x0800830c      0x1bc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x0800830c                i2c_init
+                0x08008304      0x1bc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x08008304                i2c_init
  .text.i2c_deinit
-                0x080084c8       0xa0 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x080084c8                i2c_deinit
+                0x080084c0       0xa0 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x080084c0                i2c_deinit
  .text.i2c_slave_write_IT
-                0x08008568       0x34 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x08008568                i2c_slave_write_IT
+                0x08008560       0x34 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x08008560                i2c_slave_write_IT
  .text.i2c_master_read
-                0x0800859c       0x8e .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x0800859c                i2c_master_read
+                0x08008594       0x8e .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x08008594                i2c_master_read
  .text.i2c_IsDeviceReady
-                0x0800862a       0x40 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x0800862a                i2c_IsDeviceReady
+                0x08008622       0x40 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x08008622                i2c_IsDeviceReady
  .text.i2c_master_write
-                0x0800866a       0xa2 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x0800866a                i2c_master_write
+                0x08008662       0xa2 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x08008662                i2c_master_write
  .text.i2c_attachSlaveRxEvent
-                0x0800870c        0xe .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x0800870c                i2c_attachSlaveRxEvent
+                0x08008704        0xe .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x08008704                i2c_attachSlaveRxEvent
  .text.i2c_attachSlaveTxEvent
-                0x0800871a        0xe .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x0800871a                i2c_attachSlaveTxEvent
+                0x08008712        0xe .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x08008712                i2c_attachSlaveTxEvent
  .text.HAL_I2C_AddrCallback
-                0x08008728       0x68 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x08008728                HAL_I2C_AddrCallback
+                0x08008720       0x68 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x08008720                HAL_I2C_AddrCallback
  .text.HAL_I2C_ListenCpltCallback
-                0x08008790       0x2a .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x08008790                HAL_I2C_ListenCpltCallback
+                0x08008788       0x2a .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x08008788                HAL_I2C_ListenCpltCallback
  .text.HAL_I2C_SlaveRxCpltCallback
-                0x080087ba       0x24 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x080087ba                HAL_I2C_SlaveRxCpltCallback
+                0x080087b2       0x24 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x080087b2                HAL_I2C_SlaveRxCpltCallback
  .text.HAL_I2C_SlaveTxCpltCallback
-                0x080087de        0x8 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x080087de                HAL_I2C_SlaveTxCpltCallback
+                0x080087d6        0x8 .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x080087d6                HAL_I2C_SlaveTxCpltCallback
  .text.HAL_I2C_ErrorCallback
-                0x080087e6        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x080087e6                HAL_I2C_ErrorCallback
- *fill*         0x080087f2        0x2 
+                0x080087de        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x080087de                HAL_I2C_ErrorCallback
+ *fill*         0x080087ea        0x2 
  .text.I2C1_EV_IRQHandler
-                0x080087f4        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x080087f4                I2C1_EV_IRQHandler
+                0x080087ec        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x080087ec                I2C1_EV_IRQHandler
  .text.I2C1_ER_IRQHandler
-                0x08008800        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x08008800                I2C1_ER_IRQHandler
+                0x080087f8        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x080087f8                I2C1_ER_IRQHandler
  .text.I2C2_EV_IRQHandler
-                0x0800880c        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x0800880c                I2C2_EV_IRQHandler
+                0x08008804        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x08008804                I2C2_EV_IRQHandler
  .text.I2C2_ER_IRQHandler
-                0x08008818        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x08008818                I2C2_ER_IRQHandler
+                0x08008810        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x08008810                I2C2_ER_IRQHandler
  .text.I2C3_EV_IRQHandler
-                0x08008824        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x08008824                I2C3_EV_IRQHandler
+                0x0800881c        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x0800881c                I2C3_EV_IRQHandler
  .text.I2C3_ER_IRQHandler
-                0x08008830        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
-                0x08008830                I2C3_ER_IRQHandler
+                0x08008828        0xc .pio/build/genericSTM32F411CE/libf4f/libWire.a(twi.c.o)
+                0x08008828                I2C3_ER_IRQHandler
  .text._ZN9BLDCMotor10linkDriverEP10BLDCDriver
-                0x0800883c        0x6 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x0800883c                BLDCMotor::linkDriver(BLDCDriver*)
- *fill*         0x08008842        0x2 
+                0x08008834        0x6 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x08008834                BLDCMotor::linkDriver(BLDCDriver*)
+ *fill*         0x0800883a        0x2 
  .text._ZN9BLDCMotor7disableEv
-                0x08008844       0x3c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x08008844                BLDCMotor::disable()
+                0x0800883c       0x3c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x0800883c                BLDCMotor::disable()
  .text._ZN9BLDCMotor6enableEv
-                0x08008880       0x5c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x08008880                BLDCMotor::enable()
+                0x08008878       0x5c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x08008878                BLDCMotor::enable()
  .text._ZN9BLDCMotor15setPhaseVoltageEfff
-                0x080088dc      0x318 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x080088dc                BLDCMotor::setPhaseVoltage(float, float, float)
+                0x080088d4      0x318 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x080088d4                BLDCMotor::setPhaseVoltage(float, float, float)
  .text._ZN9BLDCMotor4initEv
-                0x08008bf4       0xdc .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x08008bf4                BLDCMotor::init()
+                0x08008bec       0xdc .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x08008bec                BLDCMotor::init()
  .text._ZN9BLDCMotor7loopFOCEv
-                0x08008cd0      0x15c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x08008cd0                BLDCMotor::loopFOC()
+                0x08008cc8      0x15c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x08008cc8                BLDCMotor::loopFOC()
  .text._ZN9BLDCMotorC2Eifff
-                0x08008e2c       0x40 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x08008e2c                BLDCMotor::BLDCMotor(int, float, float, float)
-                0x08008e2c                BLDCMotor::BLDCMotor(int, float, float, float)
+                0x08008e24       0x40 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x08008e24                BLDCMotor::BLDCMotor(int, float, float, float)
+                0x08008e24                BLDCMotor::BLDCMotor(int, float, float, float)
  .text._ZN9BLDCMotor17alignCurrentSenseEv
-                0x08008e6c       0x4c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x08008e6c                BLDCMotor::alignCurrentSense()
+                0x08008e64       0x4c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x08008e64                BLDCMotor::alignCurrentSense()
  .text._ZN9BLDCMotor16velocityOpenloopEf
-                0x08008eb8       0xf4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x08008eb8                BLDCMotor::velocityOpenloop(float)
+                0x08008eb0       0xf4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x08008eb0                BLDCMotor::velocityOpenloop(float)
  .text._ZN9BLDCMotor13angleOpenloopEf
-                0x08008fac      0x144 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x08008fac                BLDCMotor::angleOpenloop(float)
+                0x08008fa4      0x144 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x08008fa4                BLDCMotor::angleOpenloop(float)
  .text._ZN9BLDCMotor18absoluteZeroSearchEv
-                0x080090f0       0xb8 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x080090f0                BLDCMotor::absoluteZeroSearch()
+                0x080090e8       0xb8 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x080090e8                BLDCMotor::absoluteZeroSearch()
  .text._ZN9BLDCMotor11alignSensorEv
-                0x080091a8      0x244 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x080091a8                BLDCMotor::alignSensor()
+                0x080091a0      0x244 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x080091a0                BLDCMotor::alignSensor()
  .text._ZN9BLDCMotor7initFOCEv
-                0x080093ec       0xb0 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x080093ec                BLDCMotor::initFOC()
+                0x080093e4       0xb0 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x080093e4                BLDCMotor::initFOC()
  .text._ZN9BLDCMotor4moveEf
-                0x0800949c      0x294 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x0800949c                BLDCMotor::move(float)
+                0x08009494      0x294 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x08009494                BLDCMotor::move(float)
  .text._ZN12CurrentSense13getABCurrentsE14PhaseCurrent_s
-                0x08009730       0x70 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(CurrentSense.cpp.o)
-                0x08009730                CurrentSense::getABCurrents(PhaseCurrent_s)
+                0x08009728       0x70 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(CurrentSense.cpp.o)
+                0x08009728                CurrentSense::getABCurrents(PhaseCurrent_s)
  .text._ZN12CurrentSense13getDQCurrentsE11ABCurrent_sf
-                0x080097a0       0x3e .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(CurrentSense.cpp.o)
-                0x080097a0                CurrentSense::getDQCurrents(ABCurrent_s, float)
+                0x08009798       0x3e .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(CurrentSense.cpp.o)
+                0x08009798                CurrentSense::getDQCurrents(ABCurrent_s, float)
  .text._ZN12CurrentSense14getFOCCurrentsEf
-                0x080097de       0x2c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(CurrentSense.cpp.o)
-                0x080097de                CurrentSense::getFOCCurrents(float)
- *fill*         0x0800980a        0x2 
+                0x080097d6       0x2c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(CurrentSense.cpp.o)
+                0x080097d6                CurrentSense::getFOCCurrents(float)
+ *fill*         0x08009802        0x2 
  .text._ZN8FOCMotorC2Ev
-                0x0800980c      0x16c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(FOCMotor.cpp.o)
-                0x0800980c                FOCMotor::FOCMotor()
-                0x0800980c                FOCMotor::FOCMotor()
+                0x08009804      0x16c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(FOCMotor.cpp.o)
+                0x08009804                FOCMotor::FOCMotor()
+                0x08009804                FOCMotor::FOCMotor()
  .text._ZN8FOCMotor10shaftAngleEv
-                0x08009978       0x40 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(FOCMotor.cpp.o)
-                0x08009978                FOCMotor::shaftAngle()
+                0x08009970       0x40 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(FOCMotor.cpp.o)
+                0x08009970                FOCMotor::shaftAngle()
  .text._ZN8FOCMotor13shaftVelocityEv
-                0x080099b8       0x38 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(FOCMotor.cpp.o)
-                0x080099b8                FOCMotor::shaftVelocity()
+                0x080099b0       0x38 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(FOCMotor.cpp.o)
+                0x080099b0                FOCMotor::shaftVelocity()
  .text._ZN8FOCMotor15electricalAngleEv
-                0x080099f0       0x46 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(FOCMotor.cpp.o)
-                0x080099f0                FOCMotor::electricalAngle()
- *fill*         0x08009a36        0x2 
+                0x080099e8       0x46 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(FOCMotor.cpp.o)
+                0x080099e8                FOCMotor::electricalAngle()
+ *fill*         0x08009a2e        0x2 
  .text._Z4_sinf
-                0x08009a38       0x80 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(foc_utils.cpp.o)
-                0x08009a38                _sin(float)
+                0x08009a30       0x80 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(foc_utils.cpp.o)
+                0x08009a30                _sin(float)
  .text._Z4_cosf
-                0x08009ab8       0x2c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(foc_utils.cpp.o)
-                0x08009ab8                _cos(float)
+                0x08009ab0       0x2c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(foc_utils.cpp.o)
+                0x08009ab0                _cos(float)
  .text._Z7_sincosfPfS_
-                0x08009ae4       0x28 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(foc_utils.cpp.o)
-                0x08009ae4                _sincos(float, float*, float*)
+                0x08009adc       0x28 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(foc_utils.cpp.o)
+                0x08009adc                _sincos(float, float*, float*)
  .text._Z15_normalizeAnglef
-                0x08009b0c       0x2c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(foc_utils.cpp.o)
-                0x08009b0c                _normalizeAngle(float)
+                0x08009b04       0x2c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(foc_utils.cpp.o)
+                0x08009b04                _normalizeAngle(float)
  .text._Z16_electricalAnglefi
-                0x08009b38        0xe .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(foc_utils.cpp.o)
-                0x08009b38                _electricalAngle(float, int)
+                0x08009b30        0xe .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(foc_utils.cpp.o)
+                0x08009b30                _electricalAngle(float, int)
  .text._ZN13LowPassFilterC2Ef
-                0x08009b46       0x16 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(lowpass_filter.cpp.o)
-                0x08009b46                LowPassFilter::LowPassFilter(float)
-                0x08009b46                LowPassFilter::LowPassFilter(float)
+                0x08009b3e       0x16 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(lowpass_filter.cpp.o)
+                0x08009b3e                LowPassFilter::LowPassFilter(float)
+                0x08009b3e                LowPassFilter::LowPassFilter(float)
  .text._ZN13LowPassFilterclEf
-                0x08009b5c       0x6c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(lowpass_filter.cpp.o)
-                0x08009b5c                LowPassFilter::operator()(float)
+                0x08009b54       0x6c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(lowpass_filter.cpp.o)
+                0x08009b54                LowPassFilter::operator()(float)
  .text._ZN13PIDControllerC2Efffff
-                0x08009bc8       0x2a .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(pid.cpp.o)
-                0x08009bc8                PIDController::PIDController(float, float, float, float, float)
-                0x08009bc8                PIDController::PIDController(float, float, float, float, float)
- *fill*         0x08009bf2        0x2 
+                0x08009bc0       0x2a .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(pid.cpp.o)
+                0x08009bc0                PIDController::PIDController(float, float, float, float, float)
+                0x08009bc0                PIDController::PIDController(float, float, float, float, float)
+ *fill*         0x08009bea        0x2 
  .text._ZN13PIDControllerclEf
-                0x08009bf4      0x124 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(pid.cpp.o)
-                0x08009bf4                PIDController::operator()(float)
+                0x08009bec      0x124 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(pid.cpp.o)
+                0x08009bec                PIDController::operator()(float)
  .text._ZN13PIDController5resetEv
-                0x08009d18        0xa .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(pid.cpp.o)
-                0x08009d18                PIDController::reset()
+                0x08009d10        0xa .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(pid.cpp.o)
+                0x08009d10                PIDController::reset()
  .text._Z6_delaym
-                0x08009d22        0x4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(time_utils.cpp.o)
-                0x08009d22                _delay(unsigned long)
+                0x08009d1a        0x4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(time_utils.cpp.o)
+                0x08009d1a                _delay(unsigned long)
  .text._Z7_microsv
-                0x08009d26        0x4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(time_utils.cpp.o)
-                0x08009d26                _micros()
- *fill*         0x08009d2a        0x2 
+                0x08009d1e        0x4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(time_utils.cpp.o)
+                0x08009d1e                _micros()
+ *fill*         0x08009d22        0x2 
  .text._ZN14SimpleFOCDebug7printlnEPK19__FlashStringHelper
-                0x08009d2c       0x14 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(SimpleFOCDebug.cpp.o)
-                0x08009d2c                SimpleFOCDebug::println(__FlashStringHelper const*)
+                0x08009d24       0x14 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(SimpleFOCDebug.cpp.o)
+                0x08009d24                SimpleFOCDebug::println(__FlashStringHelper const*)
  .text._ZN14SimpleFOCDebug7printlnEPK19__FlashStringHelperf
-                0x08009d40       0x34 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(SimpleFOCDebug.cpp.o)
-                0x08009d40                SimpleFOCDebug::println(__FlashStringHelper const*, float)
+                0x08009d38       0x34 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(SimpleFOCDebug.cpp.o)
+                0x08009d38                SimpleFOCDebug::println(__FlashStringHelper const*, float)
  .text._ZN14SimpleFOCDebug7printlnEPK19__FlashStringHelperi
-                0x08009d74       0x28 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(SimpleFOCDebug.cpp.o)
-                0x08009d74                SimpleFOCDebug::println(__FlashStringHelper const*, int)
+                0x08009d6c       0x28 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(SimpleFOCDebug.cpp.o)
+                0x08009d6c                SimpleFOCDebug::println(__FlashStringHelper const*, int)
  .text._ZN10BLDCDriver4typeEv
-                0x08009d9c        0x4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
-                0x08009d9c                BLDCDriver::type()
+                0x08009d94        0x4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
+                0x08009d94                BLDCDriver::type()
  .text._ZN14BLDCDriver3PWM6enableEv
-                0x08009da0       0x80 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
-                0x08009da0                BLDCDriver3PWM::enable()
+                0x08009d98       0x80 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
+                0x08009d98                BLDCDriver3PWM::enable()
  .text._ZN14BLDCDriver3PWM7disableEv
-                0x08009e20       0x90 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
-                0x08009e20                BLDCDriver3PWM::disable()
+                0x08009e18       0x90 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
+                0x08009e18                BLDCDriver3PWM::disable()
  .text._ZN14BLDCDriver3PWM13setPhaseStateE10PhaseStateS0_S0_
-                0x08009eb0       0x80 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
-                0x08009eb0                BLDCDriver3PWM::setPhaseState(PhaseState, PhaseState, PhaseState)
+                0x08009ea8       0x80 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
+                0x08009ea8                BLDCDriver3PWM::setPhaseState(PhaseState, PhaseState, PhaseState)
  .text._ZN14BLDCDriver3PWM4initEv
-                0x08009f30       0xb4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
-                0x08009f30                BLDCDriver3PWM::init()
+                0x08009f28       0xb4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
+                0x08009f28                BLDCDriver3PWM::init()
  .text._ZN14BLDCDriver3PWM6setPwmEfff
-                0x08009fe4       0xf4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
-                0x08009fe4                BLDCDriver3PWM::setPwm(float, float, float)
+                0x08009fdc       0xf4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
+                0x08009fdc                BLDCDriver3PWM::setPwm(float, float, float)
  .text._ZN14BLDCDriver3PWMC2Eiiiiii
-                0x0800a0d8       0x40 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
-                0x0800a0d8                BLDCDriver3PWM::BLDCDriver3PWM(int, int, int, int, int, int)
-                0x0800a0d8                BLDCDriver3PWM::BLDCDriver3PWM(int, int, int, int, int, int)
+                0x0800a0d0       0x40 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
+                0x0800a0d0                BLDCDriver3PWM::BLDCDriver3PWM(int, int, int, int, int, int)
+                0x0800a0d0                BLDCDriver3PWM::BLDCDriver3PWM(int, int, int, int, int, int)
  .text._Z14_configure3PWMliii
-                0x0800a118       0x2a .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(generic_mcu.cpp.o)
-                0x0800a118                _configure3PWM(long, int, int, int)
- *fill*         0x0800a142        0x2 
+                0x0800a110       0x2a .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(generic_mcu.cpp.o)
+                0x0800a110                _configure3PWM(long, int, int, int)
+ *fill*         0x0800a13a        0x2 
  .text._Z19_writeDutyCycle3PWMfffPv
-                0x0800a144       0x58 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(generic_mcu.cpp.o)
-                0x0800a144                _writeDutyCycle3PWM(float, float, float, void*)
+                0x0800a13c       0x58 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(generic_mcu.cpp.o)
+                0x0800a13c                _writeDutyCycle3PWM(float, float, float, void*)
  .text._ZN17MagneticSensorSPIC2E25MagneticSensorSPIConfig_si
-                0x0800a19c       0x7c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
-                0x0800a19c                MagneticSensorSPI::MagneticSensorSPI(MagneticSensorSPIConfig_s, int)
-                0x0800a19c                MagneticSensorSPI::MagneticSensorSPI(MagneticSensorSPIConfig_s, int)
+                0x0800a194       0x7c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
+                0x0800a194                MagneticSensorSPI::MagneticSensorSPI(MagneticSensorSPIConfig_s, int)
+                0x0800a194                MagneticSensorSPI::MagneticSensorSPI(MagneticSensorSPIConfig_s, int)
  .text._ZN17MagneticSensorSPI17spiCalcEvenParityEj
-                0x0800a218       0x22 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
-                0x0800a218                MagneticSensorSPI::spiCalcEvenParity(unsigned int)
- *fill*         0x0800a23a        0x2 
+                0x0800a210       0x22 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
+                0x0800a210                MagneticSensorSPI::spiCalcEvenParity(unsigned int)
+ *fill*         0x0800a232        0x2 
  .text._ZN17MagneticSensorSPI4readEj
-                0x0800a23c       0xc4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
-                0x0800a23c                MagneticSensorSPI::read(unsigned int)
+                0x0800a234       0xc4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
+                0x0800a234                MagneticSensorSPI::read(unsigned int)
  .text._ZN17MagneticSensorSPI11getRawCountEv
-                0x0800a300        0x6 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
-                0x0800a300                MagneticSensorSPI::getRawCount()
- *fill*         0x0800a306        0x2 
+                0x0800a2f8        0x6 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
+                0x0800a2f8                MagneticSensorSPI::getRawCount()
+ *fill*         0x0800a2fe        0x2 
  .text._ZN17MagneticSensorSPI14getSensorAngleEv
-                0x0800a308       0x28 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
-                0x0800a308                MagneticSensorSPI::getSensorAngle()
+                0x0800a300       0x28 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
+                0x0800a300                MagneticSensorSPI::getSensorAngle()
  .text.startup._GLOBAL__sub_I_AS5147_SPI
-                0x0800a330       0x30 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
+                0x0800a328       0x30 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
  .text._ZN6Sensor11getVelocityEv
-                0x0800a360       0x7c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
-                0x0800a360                Sensor::getVelocity()
+                0x0800a358       0x7c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
+                0x0800a358                Sensor::getVelocity()
  .text._ZN6Sensor18getMechanicalAngleEv
-                0x0800a3dc        0x6 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
-                0x0800a3dc                Sensor::getMechanicalAngle()
- *fill*         0x0800a3e2        0x2 
+                0x0800a3d4        0x6 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
+                0x0800a3d4                Sensor::getMechanicalAngle()
+ *fill*         0x0800a3da        0x2 
  .text._ZN6Sensor8getAngleEv
-                0x0800a3e4       0x1c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
-                0x0800a3e4                Sensor::getAngle()
+                0x0800a3dc       0x1c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
+                0x0800a3dc                Sensor::getAngle()
  .text._ZN6Sensor15getPreciseAngleEv
-                0x0800a400       0x38 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
-                0x0800a400                Sensor::getPreciseAngle()
+                0x0800a3f8       0x38 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
+                0x0800a3f8                Sensor::getPreciseAngle()
  .text._ZN6Sensor16getFullRotationsEv
-                0x0800a438        0x4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
-                0x0800a438                Sensor::getFullRotations()
+                0x0800a430        0x4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
+                0x0800a430                Sensor::getFullRotations()
  .text._ZN6Sensor11needsSearchEv
-                0x0800a43c        0x4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
-                0x0800a43c                Sensor::needsSearch()
+                0x0800a434        0x4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
+                0x0800a434                Sensor::needsSearch()
  .text._ZN6Sensor6updateEv
-                0x0800a440       0x60 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
-                0x0800a440                Sensor::update()
+                0x0800a438       0x60 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
+                0x0800a438                Sensor::update()
  .text._ZN6Sensor4initEv
-                0x0800a4a0       0x74 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
-                0x0800a4a0                Sensor::init()
+                0x0800a498       0x74 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(Sensor.cpp.o)
+                0x0800a498                Sensor::init()
  .text._ZN5Print5writeEPKc
-                0x0800a514       0x20 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a514                Print::write(char const*)
+                0x0800a50c       0x20 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a50c                Print::write(char const*)
  .text._ZN5Print5printEPK19__FlashStringHelper
-                0x0800a534        0x8 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a534                Print::print(__FlashStringHelper const*)
+                0x0800a52c        0x8 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a52c                Print::print(__FlashStringHelper const*)
  .text._ZN5Print5printEPKc
-                0x0800a53c        0x8 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a53c                Print::print(char const*)
+                0x0800a534        0x8 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a534                Print::print(char const*)
  .text._ZN5Print5printEc
-                0x0800a544        0x6 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a544                Print::print(char)
- *fill*         0x0800a54a        0x2 
+                0x0800a53c        0x6 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a53c                Print::print(char)
+ *fill*         0x0800a542        0x2 
  .text._ZN5Print7printlnEv
-                0x0800a54c       0x10 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a54c                Print::println()
+                0x0800a544       0x10 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a544                Print::println()
  .text._ZN5Print7printlnEPK19__FlashStringHelper
-                0x0800a55c       0x14 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a55c                Print::println(__FlashStringHelper const*)
+                0x0800a554       0x14 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a554                Print::println(__FlashStringHelper const*)
  .text._ZN5Print7printlnEPKc
-                0x0800a570        0x4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a570                Print::println(char const*)
+                0x0800a568        0x4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a568                Print::println(char const*)
  .text._ZN5Print11printNumberEmh
-                0x0800a574       0x3c .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a574                Print::printNumber(unsigned long, unsigned char)
+                0x0800a56c       0x3c .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a56c                Print::printNumber(unsigned long, unsigned char)
  .text._ZN5Print5printEli
-                0x0800a5b0       0x44 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a5b0                Print::print(long, int)
+                0x0800a5a8       0x44 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a5a8                Print::print(long, int)
  .text._ZN5Print7printlnEii
-                0x0800a5f4       0x14 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a5f4                Print::println(int, int)
+                0x0800a5ec       0x14 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a5ec                Print::println(int, int)
  .text._ZN5Print10printFloatIfEEjT_h
-                0x0800a608      0x104 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a608                unsigned int Print::printFloat<float>(float, unsigned char)
+                0x0800a600      0x104 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a600                unsigned int Print::printFloat<float>(float, unsigned char)
  .text._ZN5Print5printEfi
-                0x0800a70c        0xa .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a70c                Print::print(float, int)
+                0x0800a704        0xa .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a704                Print::print(float, int)
  .text._ZN5Print7printlnEfi
-                0x0800a716       0x16 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
-                0x0800a716                Print::println(float, int)
+                0x0800a70e       0x16 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800a70e                Print::println(float, int)
  .text._ZN6Stream9timedReadEv
-                0x0800a72c       0x2a .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Stream.cpp.o)
-                0x0800a72c                Stream::timedRead()
+                0x0800a724       0x2a .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Stream.cpp.o)
+                0x0800a724                Stream::timedRead()
  .text._ZN6Stream9readBytesEPcj
-                0x0800a756       0x22 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Stream.cpp.o)
-                0x0800a756                Stream::readBytes(char*, unsigned int)
+                0x0800a74e       0x22 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Stream.cpp.o)
+                0x0800a74e                Stream::readBytes(char*, unsigned int)
  .text._ZN6Stream14readBytesUntilEcPcj
-                0x0800a778       0x30 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Stream.cpp.o)
-                0x0800a778                Stream::readBytesUntil(char, char*, unsigned int)
+                0x0800a770       0x30 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Stream.cpp.o)
+                0x0800a770                Stream::readBytesUntil(char, char*, unsigned int)
  .text.startup._Z7premainv
-                0x0800a7a8       0x10 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(main.cpp.o)
-                0x0800a7a8                premain()
+                0x0800a7a0       0x10 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(main.cpp.o)
+                0x0800a7a0                premain()
  .text.startup.main
-                0x0800a7b8       0x14 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(main.cpp.o)
-                0x0800a7b8                main
+                0x0800a7b0       0x14 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(main.cpp.o)
+                0x0800a7b0                main
  .text.pinNametoDigitalPin
-                0x0800a7cc       0x34 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(pins_arduino.c.o)
-                0x0800a7cc                pinNametoDigitalPin
+                0x0800a7c4       0x34 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(pins_arduino.c.o)
+                0x0800a7c4                pinNametoDigitalPin
  .text.Reset_Handler
-                0x0800a800       0x50 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(startup_stm32yyxx.S.o)
-                0x0800a800                Reset_Handler
+                0x0800a7f8       0x50 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(startup_stm32yyxx.S.o)
+                0x0800a7f8                Reset_Handler
  .text.Default_Handler
-                0x0800a850        0x2 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(startup_stm32yyxx.S.o)
-                0x0800a850                RTC_Alarm_IRQHandler
-                0x0800a850                DebugMon_Handler
-                0x0800a850                SPI4_IRQHandler
-                0x0800a850                DMA2_Stream5_IRQHandler
-                0x0800a850                HardFault_Handler
-                0x0800a850                DMA1_Stream5_IRQHandler
-                0x0800a850                PVD_IRQHandler
-                0x0800a850                SDIO_IRQHandler
-                0x0800a850                TAMP_STAMP_IRQHandler
-                0x0800a850                PendSV_Handler
-                0x0800a850                NMI_Handler
-                0x0800a850                DMA1_Stream2_IRQHandler
-                0x0800a850                FPU_IRQHandler
-                0x0800a850                UsageFault_Handler
-                0x0800a850                DMA2_Stream2_IRQHandler
-                0x0800a850                SPI1_IRQHandler
-                0x0800a850                DMA2_Stream3_IRQHandler
-                0x0800a850                DMA2_Stream0_IRQHandler
-                0x0800a850                DMA1_Stream6_IRQHandler
-                0x0800a850                DMA1_Stream1_IRQHandler
-                0x0800a850                RCC_IRQHandler
-                0x0800a850                Default_Handler
-                0x0800a850                ADC_IRQHandler
-                0x0800a850                DMA1_Stream7_IRQHandler
-                0x0800a850                SPI5_IRQHandler
-                0x0800a850                DMA2_Stream7_IRQHandler
-                0x0800a850                RTC_WKUP_IRQHandler
-                0x0800a850                SPI2_IRQHandler
-                0x0800a850                MemManage_Handler
-                0x0800a850                DMA1_Stream0_IRQHandler
-                0x0800a850                SVC_Handler
-                0x0800a850                WWDG_IRQHandler
-                0x0800a850                DMA2_Stream1_IRQHandler
-                0x0800a850                FLASH_IRQHandler
-                0x0800a850                DMA2_Stream4_IRQHandler
-                0x0800a850                BusFault_Handler
-                0x0800a850                SPI3_IRQHandler
-                0x0800a850                DMA1_Stream4_IRQHandler
-                0x0800a850                DMA2_Stream6_IRQHandler
-                0x0800a850                DMA1_Stream3_IRQHandler
+                0x0800a848        0x2 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(startup_stm32yyxx.S.o)
+                0x0800a848                RTC_Alarm_IRQHandler
+                0x0800a848                DebugMon_Handler
+                0x0800a848                SPI4_IRQHandler
+                0x0800a848                DMA2_Stream5_IRQHandler
+                0x0800a848                HardFault_Handler
+                0x0800a848                DMA1_Stream5_IRQHandler
+                0x0800a848                PVD_IRQHandler
+                0x0800a848                SDIO_IRQHandler
+                0x0800a848                TAMP_STAMP_IRQHandler
+                0x0800a848                PendSV_Handler
+                0x0800a848                NMI_Handler
+                0x0800a848                DMA1_Stream2_IRQHandler
+                0x0800a848                FPU_IRQHandler
+                0x0800a848                UsageFault_Handler
+                0x0800a848                DMA2_Stream2_IRQHandler
+                0x0800a848                SPI1_IRQHandler
+                0x0800a848                DMA2_Stream3_IRQHandler
+                0x0800a848                DMA2_Stream0_IRQHandler
+                0x0800a848                DMA1_Stream6_IRQHandler
+                0x0800a848                DMA1_Stream1_IRQHandler
+                0x0800a848                RCC_IRQHandler
+                0x0800a848                Default_Handler
+                0x0800a848                ADC_IRQHandler
+                0x0800a848                DMA1_Stream7_IRQHandler
+                0x0800a848                SPI5_IRQHandler
+                0x0800a848                DMA2_Stream7_IRQHandler
+                0x0800a848                RTC_WKUP_IRQHandler
+                0x0800a848                SPI2_IRQHandler
+                0x0800a848                MemManage_Handler
+                0x0800a848                DMA1_Stream0_IRQHandler
+                0x0800a848                SVC_Handler
+                0x0800a848                WWDG_IRQHandler
+                0x0800a848                DMA2_Stream1_IRQHandler
+                0x0800a848                FLASH_IRQHandler
+                0x0800a848                DMA2_Stream4_IRQHandler
+                0x0800a848                BusFault_Handler
+                0x0800a848                SPI3_IRQHandler
+                0x0800a848                DMA1_Stream4_IRQHandler
+                0x0800a848                DMA2_Stream6_IRQHandler
+                0x0800a848                DMA1_Stream3_IRQHandler
  .text.mapResolution
-                0x0800a852       0x26 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_analog.c.o)
+                0x0800a84a       0x26 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_analog.c.o)
  .text.analogWrite
-                0x0800a878       0xdc .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_analog.c.o)
-                0x0800a878                analogWrite
- .text.pinMode  0x0800a954       0xbc .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_digital.c.o)
-                0x0800a954                pinMode
+                0x0800a870       0xdc .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_analog.c.o)
+                0x0800a870                analogWrite
+ .text.pinMode  0x0800a94c       0xbc .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_digital.c.o)
+                0x0800a94c                pinMode
  .text.digitalWrite
-                0x0800aa10       0x70 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_digital.c.o)
-                0x0800aa10                digitalWrite
- .text.millis   0x0800aa80        0x4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_time.c.o)
-                0x0800aa80                millis
- .text.micros   0x0800aa84        0x4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_time.c.o)
-                0x0800aa84                micros
- .text.delay    0x0800aa88       0x1c .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_time.c.o)
-                0x0800aa88                delay
+                0x0800aa08       0x70 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_digital.c.o)
+                0x0800aa08                digitalWrite
+ .text.millis   0x0800aa78        0x4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_time.c.o)
+                0x0800aa78                millis
+ .text.micros   0x0800aa7c        0x4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_time.c.o)
+                0x0800aa7c                micros
+ .text.delay    0x0800aa80       0x1c .pio/build/genericSTM32F411CE/libFrameworkArduino.a(wiring_time.c.o)
+                0x0800aa80                delay
  .text._Z14serialEventRunv
-                0x0800aaa4       0x34 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(WSerial.cpp.o)
-                0x0800aaa4                serialEventRun()
- .text.init     0x0800aad8        0x4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(board.c.o)
-                0x0800aad8                init
- .text.__empty  0x0800aadc        0x2 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(hooks.c.o)
-                0x0800aadc                yield
+                0x0800aa9c       0x34 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(WSerial.cpp.o)
+                0x0800aa9c                serialEventRun()
+ .text.init     0x0800aad0        0x4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(board.c.o)
+                0x0800aad0                init
+ .text.__empty  0x0800aad4        0x2 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(hooks.c.o)
+                0x0800aad4                yield
  .text._ZN14HardwareSerial9availableEv
-                0x0800aade       0x10 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800aade                HardwareSerial::available()
+                0x0800aad6       0x10 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800aad6                HardwareSerial::available()
  .text._ZN14HardwareSerial4peekEv
-                0x0800aaee       0x1a .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800aaee                HardwareSerial::peek()
+                0x0800aae6       0x1a .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800aae6                HardwareSerial::peek()
  .text._ZN14HardwareSerial17availableForWriteEv
-                0x0800ab08       0x1c .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ab08                HardwareSerial::availableForWrite()
+                0x0800ab00       0x1c .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ab00                HardwareSerial::availableForWrite()
  .text._ZN14HardwareSerial5writeEh
-                0x0800ab24       0x18 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ab24                HardwareSerial::write(unsigned char)
+                0x0800ab1c       0x18 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ab1c                HardwareSerial::write(unsigned char)
  .text._ZN14HardwareSerial16_tx_complete_irqEP8serial_s
-                0x0800ab3c       0x60 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ab3c                HardwareSerial::_tx_complete_irq(serial_s*)
+                0x0800ab34       0x60 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ab34                HardwareSerial::_tx_complete_irq(serial_s*)
  .text._ZN14HardwareSerial5writeEPKhj
-                0x0800ab9c       0xe4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ab9c                HardwareSerial::write(unsigned char const*, unsigned int)
+                0x0800ab94       0xe4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ab94                HardwareSerial::write(unsigned char const*, unsigned int)
  .text._ZN14HardwareSerial4initE7PinNameS0_S0_S0_
-                0x0800ac80       0x32 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ac80                HardwareSerial::init(PinName, PinName, PinName, PinName)
+                0x0800ac78       0x32 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ac78                HardwareSerial::init(PinName, PinName, PinName, PinName)
  .text._ZN14HardwareSerial5flushEm
-                0x0800acb2       0x36 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800acb2                HardwareSerial::flush(unsigned long)
+                0x0800acaa       0x36 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800acaa                HardwareSerial::flush(unsigned long)
  .text._ZN14HardwareSerial5flushEv
-                0x0800ace8        0x6 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ace8                HardwareSerial::flush()
- *fill*         0x0800acee        0x2 
+                0x0800ace0        0x6 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ace0                HardwareSerial::flush()
+ *fill*         0x0800ace6        0x2 
  .text._ZN14HardwareSerial5setRxEm
-                0x0800acf0       0x48 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800acf0                HardwareSerial::setRx(unsigned long)
+                0x0800ace8       0x48 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ace8                HardwareSerial::setRx(unsigned long)
  .text._ZN14HardwareSerial5setTxEm
-                0x0800ad38       0x48 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ad38                HardwareSerial::setTx(unsigned long)
+                0x0800ad30       0x48 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ad30                HardwareSerial::setTx(unsigned long)
  .text._ZN14HardwareSerialC2EPv16HalfDuplexMode_t
-                0x0800ad80       0x90 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ad80                HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t)
-                0x0800ad80                HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t)
+                0x0800ad78       0x90 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ad78                HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t)
+                0x0800ad78                HardwareSerial::HardwareSerial(void*, HalfDuplexMode_t)
  .text._ZN14HardwareSerial18enableHalfDuplexRxEv
-                0x0800ae10       0x2c .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ae10                HardwareSerial::enableHalfDuplexRx()
+                0x0800ae08       0x2c .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ae08                HardwareSerial::enableHalfDuplexRx()
  .text._ZN14HardwareSerial4readEv
-                0x0800ae3c       0x2e .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800ae3c                HardwareSerial::read()
- *fill*         0x0800ae6a        0x2 
+                0x0800ae34       0x2e .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ae34                HardwareSerial::read()
+ *fill*         0x0800ae62        0x2 
  .text.startup._GLOBAL__sub_I_Serial2
-                0x0800ae6c       0x14 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800ae64       0x14 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
  .text.__udivmoddi4
-                0x0800ae80      0x2bc c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
-                0x0800ae80                __udivmoddi4
+                0x0800ae78      0x2bc c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x0800ae78                __udivmoddi4
  .text.unlikely._ZSt25__throw_bad_function_callv
-                0x0800b13c        0x6 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(functional.o)
-                0x0800b13c                std::__throw_bad_function_call()
- *fill*         0x0800b142        0x2 
+                0x0800b134        0x6 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libstdc++_nano.a(functional.o)
+                0x0800b134                std::__throw_bad_function_call()
+ *fill*         0x0800b13a        0x2 
  .text._ZN8SPIClassC2Emmmm
-                0x0800b144      0x12c .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(SPI.cpp.o)
-                0x0800b144                SPIClass::SPIClass(unsigned long, unsigned long, unsigned long, unsigned long)
-                0x0800b144                SPIClass::SPIClass(unsigned long, unsigned long, unsigned long, unsigned long)
+                0x0800b13c      0x12c .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(SPI.cpp.o)
+                0x0800b13c                SPIClass::SPIClass(unsigned long, unsigned long, unsigned long, unsigned long)
+                0x0800b13c                SPIClass::SPIClass(unsigned long, unsigned long, unsigned long, unsigned long)
  .text._ZN8SPIClass16beginTransactionE11SPISettings
-                0x0800b270       0x44 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(SPI.cpp.o)
-                0x0800b270                SPIClass::beginTransaction(SPISettings)
+                0x0800b268       0x44 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(SPI.cpp.o)
+                0x0800b268                SPIClass::beginTransaction(SPISettings)
  .text._ZN8SPIClass14endTransactionEv
-                0x0800b2b4        0x2 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(SPI.cpp.o)
-                0x0800b2b4                SPIClass::endTransaction()
+                0x0800b2ac        0x2 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(SPI.cpp.o)
+                0x0800b2ac                SPIClass::endTransaction()
  .text._ZN8SPIClass10transfer16Etb
-                0x0800b2b6       0x42 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(SPI.cpp.o)
-                0x0800b2b6                SPIClass::transfer16(unsigned short, bool)
+                0x0800b2ae       0x42 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(SPI.cpp.o)
+                0x0800b2ae                SPIClass::transfer16(unsigned short, bool)
  .text.startup._GLOBAL__sub_I_SPI
-                0x0800b2f8       0x20 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(SPI.cpp.o)
+                0x0800b2f0       0x20 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(SPI.cpp.o)
  .text.LL_GPIO_SetPinPull
-                0x0800b318       0x2a .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(spi_com.c.o)
- *fill*         0x0800b342        0x2 
+                0x0800b310       0x2a .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(spi_com.c.o)
+ *fill*         0x0800b33a        0x2 
  .text.spi_getClkFreqInst
-                0x0800b344       0x44 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(spi_com.c.o)
-                0x0800b344                spi_getClkFreqInst
+                0x0800b33c       0x44 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(spi_com.c.o)
+                0x0800b33c                spi_getClkFreqInst
  .text.spi_init
-                0x0800b388      0x2b0 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(spi_com.c.o)
-                0x0800b388                spi_init
+                0x0800b380      0x2b0 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(spi_com.c.o)
+                0x0800b380                spi_init
  .text.spi_transfer
-                0x0800b638       0x5e .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(spi_com.c.o)
-                0x0800b638                spi_transfer
- *fill*         0x0800b696        0x2 
- .text.atan2f   0x0800b698        0x4 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
-                0x0800b698                atan2f
- .text.fmodf    0x0800b69c       0x48 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_fmod.o)
-                0x0800b69c                fmodf
- .text.sqrtf    0x0800b6e4       0x44 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
-                0x0800b6e4                sqrtf
+                0x0800b630       0x5e .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(spi_com.c.o)
+                0x0800b630                spi_transfer
+ *fill*         0x0800b68e        0x2 
+ .text.atan2f   0x0800b690        0x4 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_atan2.o)
+                0x0800b690                atan2f
+ .text.fmodf    0x0800b694       0x48 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_fmod.o)
+                0x0800b694                fmodf
+ .text.sqrtf    0x0800b6dc       0x44 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-wf_sqrt.o)
+                0x0800b6dc                sqrtf
  .text.__ieee754_sqrtf
-                0x0800b728        0x8 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_sqrt.o)
-                0x0800b728                __ieee754_sqrtf
+                0x0800b720        0x8 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_sqrt.o)
+                0x0800b720                __ieee754_sqrtf
  .text.__ieee754_atan2f
-                0x0800b730      0x150 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
-                0x0800b730                __ieee754_atan2f
+                0x0800b728      0x150 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+                0x0800b728                __ieee754_atan2f
  .text.__ieee754_fmodf
-                0x0800b880      0x164 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_fmod.o)
-                0x0800b880                __ieee754_fmodf
- .text.atanf    0x0800b9e4      0x1ac c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
-                0x0800b9e4                atanf
- .text.fabsf    0x0800bb90       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
-                0x0800bb90                fabsf
- .text.abort    0x0800bba0        0xe c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-abort.o)
-                0x0800bba0                abort
- *fill*         0x0800bbae        0x2 
- .text.malloc   0x0800bbb0       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-malloc.o)
-                0x0800bbb0                malloc
- .text.free     0x0800bbc0       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-malloc.o)
-                0x0800bbc0                free
+                0x0800b878      0x164 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_fmod.o)
+                0x0800b878                __ieee754_fmodf
+ .text.atanf    0x0800b9dc      0x1ac c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+                0x0800b9dc                atanf
+ .text.fabsf    0x0800bb88       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_fabs.o)
+                0x0800bb88                fabsf
+ .text.abort    0x0800bb98        0xe c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-abort.o)
+                0x0800bb98                abort
+ *fill*         0x0800bba6        0x2 
+ .text.malloc   0x0800bba8       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-malloc.o)
+                0x0800bba8                malloc
+ .text.free     0x0800bbb8       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-malloc.o)
+                0x0800bbb8                free
  .text.sbrk_aligned
-                0x0800bbd0       0x44 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x0800bbc8       0x44 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
  .text._malloc_r
-                0x0800bc14      0x100 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
-                0x0800bc14                _malloc_r
+                0x0800bc0c      0x100 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mallocr.o)
+                0x0800bc0c                _malloc_r
  .text.__malloc_lock
-                0x0800bd14        0xc c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
-                0x0800bd14                __malloc_lock
+                0x0800bd0c        0xc c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
+                0x0800bd0c                __malloc_lock
  .text.__malloc_unlock
-                0x0800bd20        0xc c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
-                0x0800bd20                __malloc_unlock
- .text.realloc  0x0800bd2c       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-realloc.o)
-                0x0800bd2c                realloc
+                0x0800bd18        0xc c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-mlock.o)
+                0x0800bd18                __malloc_unlock
+ .text.realloc  0x0800bd24       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-realloc.o)
+                0x0800bd24                realloc
  .text._realloc_r
-                0x0800bd3c       0x5c c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reallocr.o)
-                0x0800bd3c                _realloc_r
- .text.memset   0x0800bd98       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
-                0x0800bd98                memset
+                0x0800bd34       0x5c c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-reallocr.o)
+                0x0800bd34                _realloc_r
+ .text.memset   0x0800bd90       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memset.o)
+                0x0800bd90                memset
  .text._raise_r
-                0x0800bda8       0x50 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signal.o)
-                0x0800bda8                _raise_r
- .text.raise    0x0800bdf8       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signal.o)
-                0x0800bdf8                raise
- .text._kill_r  0x0800be08       0x24 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o)
-                0x0800be08                _kill_r
+                0x0800bda0       0x50 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signal.o)
+                0x0800bda0                _raise_r
+ .text.raise    0x0800bdf0       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signal.o)
+                0x0800bdf0                raise
+ .text._kill_r  0x0800be00       0x24 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o)
+                0x0800be00                _kill_r
  .text._getpid_r
-                0x0800be2c        0x4 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o)
-                0x0800be2c                _getpid_r
- .text._sbrk_r  0x0800be30       0x20 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sbrkr.o)
-                0x0800be30                _sbrk_r
- .text.__errno  0x0800be50        0xc c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-errno.o)
-                0x0800be50                __errno
+                0x0800be24        0x4 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-signalr.o)
+                0x0800be24                _getpid_r
+ .text._sbrk_r  0x0800be28       0x20 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-sbrkr.o)
+                0x0800be28                _sbrk_r
+ .text.__errno  0x0800be48        0xc c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-errno.o)
+                0x0800be48                __errno
  .text.__libc_init_array
-                0x0800be5c       0x48 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
-                0x0800be5c                __libc_init_array
+                0x0800be54       0x48 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)
+                0x0800be54                __libc_init_array
  .text.__retarget_lock_acquire_recursive
-                0x0800bea4        0x2 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
-                0x0800bea4                __retarget_lock_acquire_recursive
+                0x0800be9c        0x2 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
+                0x0800be9c                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x0800bea6        0x2 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
-                0x0800bea6                __retarget_lock_release_recursive
- .text.memcpy   0x0800bea8       0x1c c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
-                0x0800bea8                memcpy
- .text._free_r  0x0800bec4       0x94 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
-                0x0800bec4                _free_r
+                0x0800be9e        0x2 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lock.o)
+                0x0800be9e                __retarget_lock_release_recursive
+ .text.memcpy   0x0800bea0       0x1c c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-memcpy-stub.o)
+                0x0800bea0                memcpy
+ .text._free_r  0x0800bebc       0x94 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-freer.o)
+                0x0800bebc                _free_r
  .text._malloc_usable_size_r
-                0x0800bf58       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-msizer.o)
-                0x0800bf58                _malloc_usable_size_r
+                0x0800bf50       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-msizer.o)
+                0x0800bf50                _malloc_usable_size_r
  *(.glue_7)
- .glue_7        0x0800bf68        0x0 linker stubs
+ .glue_7        0x0800bf60        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0800bf68        0x0 linker stubs
+ .glue_7t       0x0800bf60        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0800bf68        0x0 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x0800bf60        0x0 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x0800bf68        0x4 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0800bf68                _init
- .init          0x0800bf6c        0x8 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x0800bf60        0x4 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0800bf60                _init
+ .init          0x0800bf64        0x8 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x0800bf74        0x4 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x0800bf74                _fini
- .fini          0x0800bf78        0x8 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x0800bf80                        . = ALIGN (0x4)
-                0x0800bf80                        _etext = .
+ .fini          0x0800bf6c        0x4 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0800bf6c                _fini
+ .fini          0x0800bf70        0x8 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x0800bf78                        . = ALIGN (0x4)
+                0x0800bf78                        _etext = .
 
-.vfp11_veneer   0x0800bf80        0x0
- .vfp11_veneer  0x0800bf80        0x0 linker stubs
+.vfp11_veneer   0x0800bf78        0x0
+ .vfp11_veneer  0x0800bf78        0x0 linker stubs
 
-.v4_bx          0x0800bf80        0x0
- .v4_bx         0x0800bf80        0x0 linker stubs
+.v4_bx          0x0800bf78        0x0
+ .v4_bx         0x0800bf78        0x0 linker stubs
 
-.iplt           0x0800bf80        0x0
- .iplt          0x0800bf80        0x0 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x0800bf78        0x0
+ .iplt          0x0800bf78        0x0 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x0800bf80      0xba8
-                0x0800bf80                        . = ALIGN (0x4)
+.rodata         0x0800bf78      0xba8
+                0x0800bf78                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata._ZTV9USBSerial
-                0x0800bf80       0x2c .pio/build/genericSTM32F411CE/USBDevice/src/USBSerial.cpp.o
-                0x0800bf80                vtable for USBSerial
+                0x0800bf78       0x2c .pio/build/genericSTM32F411CE/USBDevice/src/USBSerial.cpp.o
+                0x0800bf78                vtable for USBSerial
  .rodata.USBD_ManufacturerStrDescriptor.str1.1
-                0x0800bfac       0x13 .pio/build/genericSTM32F411CE/USBDevice/src/usbd_desc.c.o
+                0x0800bfa4       0x13 .pio/build/genericSTM32F411CE/USBDevice/src/usbd_desc.c.o
  .rodata.USBD_Class_ProductStrDescriptor.str1.1
-                0x0800bfbf       0x40 .pio/build/genericSTM32F411CE/USBDevice/src/usbd_desc.c.o
+                0x0800bfb7       0x40 .pio/build/genericSTM32F411CE/USBDevice/src/usbd_desc.c.o
  .rodata.USBD_Class_ConfigStrDescriptor.str1.1
-                0x0800bfff       0x1c .pio/build/genericSTM32F411CE/USBDevice/src/usbd_desc.c.o
+                0x0800bff7       0x1c .pio/build/genericSTM32F411CE/USBDevice/src/usbd_desc.c.o
  .rodata.USBD_Class_InterfaceStrDescriptor.str1.1
-                0x0800c01b       0x1f .pio/build/genericSTM32F411CE/USBDevice/src/usbd_desc.c.o
- *fill*         0x0800c03a        0x2 
+                0x0800c013       0x1f .pio/build/genericSTM32F411CE/USBDevice/src/usbd_desc.c.o
+ *fill*         0x0800c032        0x2 
  .rodata.ep_def
-                0x0800c03c       0x28 .pio/build/genericSTM32F411CE/USBDevice/src/usbd_ep_conf.c.o
-                0x0800c03c                ep_def
+                0x0800c034       0x28 .pio/build/genericSTM32F411CE/USBDevice/src/usbd_ep_conf.c.o
+                0x0800c034                ep_def
  .rodata.PinMap_USB_OTG_FS
-                0x0800c064       0x48 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
-                0x0800c064                PinMap_USB_OTG_FS
+                0x0800c05c       0x48 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
+                0x0800c05c                PinMap_USB_OTG_FS
  .rodata.PinMap_SPI_SSEL
-                0x0800c0ac       0x6c .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
-                0x0800c0ac                PinMap_SPI_SSEL
+                0x0800c0a4       0x6c .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
+                0x0800c0a4                PinMap_SPI_SSEL
  .rodata.PinMap_SPI_SCLK
-                0x0800c118       0x6c .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
-                0x0800c118                PinMap_SPI_SCLK
+                0x0800c110       0x6c .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
+                0x0800c110                PinMap_SPI_SCLK
  .rodata.PinMap_SPI_MISO
-                0x0800c184       0x54 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
-                0x0800c184                PinMap_SPI_MISO
+                0x0800c17c       0x54 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
+                0x0800c17c                PinMap_SPI_MISO
  .rodata.PinMap_SPI_MOSI
-                0x0800c1d8       0x60 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
-                0x0800c1d8                PinMap_SPI_MOSI
+                0x0800c1d0       0x60 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
+                0x0800c1d0                PinMap_SPI_MOSI
  .rodata.PinMap_UART_RX
-                0x0800c238       0x48 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
-                0x0800c238                PinMap_UART_RX
+                0x0800c230       0x48 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
+                0x0800c230                PinMap_UART_RX
  .rodata.PinMap_UART_TX
-                0x0800c280       0x48 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
-                0x0800c280                PinMap_UART_TX
+                0x0800c278       0x48 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
+                0x0800c278                PinMap_UART_TX
  .rodata.PinMap_TIM
-                0x0800c2c8      0x1bc .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
-                0x0800c2c8                PinMap_TIM
+                0x0800c2c0      0x1bc .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
+                0x0800c2c0                PinMap_TIM
  .rodata.PinMap_I2C_SCL
-                0x0800c484       0x3c .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
-                0x0800c484                PinMap_I2C_SCL
+                0x0800c47c       0x3c .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
+                0x0800c47c                PinMap_I2C_SCL
  .rodata.PinMap_I2C_SDA
-                0x0800c4c0       0x54 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
-                0x0800c4c0                PinMap_I2C_SDA
+                0x0800c4b8       0x54 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/PeripheralPins.c.o
+                0x0800c4b8                PinMap_I2C_SDA
  .rodata.analogInputPin
-                0x0800c514       0x28 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/variant_generic.cpp.o
-                0x0800c514                analogInputPin
+                0x0800c50c       0x28 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/variant_generic.cpp.o
+                0x0800c50c                analogInputPin
  .rodata.digitalPin
-                0x0800c53c       0x90 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/variant_generic.cpp.o
-                0x0800c53c                digitalPin
+                0x0800c534       0x90 .pio/build/genericSTM32F411CE/FrameworkArduinoVariant/variant_generic.cpp.o
+                0x0800c534                digitalPin
  .rodata.CSWTCH.75
-                0x0800c5cc        0x4 .pio/build/genericSTM32F411CE/SrcWrapper/src/HardwareTimer.cpp.o
+                0x0800c5c4        0x4 .pio/build/genericSTM32F411CE/SrcWrapper/src/HardwareTimer.cpp.o
  .rodata.CSWTCH.73
-                0x0800c5d0        0x4 .pio/build/genericSTM32F411CE/SrcWrapper/src/HardwareTimer.cpp.o
+                0x0800c5c8        0x4 .pio/build/genericSTM32F411CE/SrcWrapper/src/HardwareTimer.cpp.o
  .rodata.CSWTCH.71
-                0x0800c5d4        0x6 .pio/build/genericSTM32F411CE/SrcWrapper/src/HardwareTimer.cpp.o
- *fill*         0x0800c5da        0x2 
+                0x0800c5cc        0x6 .pio/build/genericSTM32F411CE/SrcWrapper/src/HardwareTimer.cpp.o
+ *fill*         0x0800c5d2        0x2 
  .rodata.pin_map_ll
-                0x0800c5dc       0x40 .pio/build/genericSTM32F411CE/SrcWrapper/src/stm32/pinmap.c.o
-                0x0800c5dc                pin_map_ll
+                0x0800c5d4       0x40 .pio/build/genericSTM32F411CE/SrcWrapper/src/stm32/pinmap.c.o
+                0x0800c5d4                pin_map_ll
  .rodata.APBPrescTable
-                0x0800c61c        0x8 .pio/build/genericSTM32F411CE/SrcWrapper/src/stm32/system_stm32yyxx.c.o
-                0x0800c61c                APBPrescTable
+                0x0800c614        0x8 .pio/build/genericSTM32F411CE/SrcWrapper/src/stm32/system_stm32yyxx.c.o
+                0x0800c614                APBPrescTable
  .rodata.AHBPrescTable
-                0x0800c624       0x10 .pio/build/genericSTM32F411CE/SrcWrapper/src/stm32/system_stm32yyxx.c.o
-                0x0800c624                AHBPrescTable
+                0x0800c61c       0x10 .pio/build/genericSTM32F411CE/SrcWrapper/src/stm32/system_stm32yyxx.c.o
+                0x0800c61c                AHBPrescTable
  .rodata._Z9calibratev.str1.1
-                0x0800c634       0x3e .pio/build/genericSTM32F411CE/src/main.cpp.o
+                0x0800c62c       0x3e .pio/build/genericSTM32F411CE/src/main.cpp.o
  .rodata.loop.str1.1
-                0x0800c672       0x97 .pio/build/genericSTM32F411CE/src/main.cpp.o
- *fill*         0x0800c709        0x3 
+                0x0800c66a       0x97 .pio/build/genericSTM32F411CE/src/main.cpp.o
+ *fill*         0x0800c701        0x3 
  .rodata._ZTV7TwoWire
-                0x0800c70c       0x2c .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x0800c70c                vtable for TwoWire
+                0x0800c704       0x2c .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x0800c704                vtable for TwoWire
  .rodata._ZN9BLDCMotor4initEv.str1.1
-                0x0800c738       0x4d .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x0800c730       0x4d .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
  .rodata._ZN9BLDCMotor7loopFOCEv.str1.1
-                0x0800c785       0x21 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x0800c77d       0x21 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
  .rodata._ZN9BLDCMotor17alignCurrentSenseEv.str1.1
-                0x0800c7a6       0x3b .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x0800c79e       0x3b .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
  .rodata._ZN9BLDCMotor18absoluteZeroSearchEv.str1.1
-                0x0800c7e1       0x3a .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x0800c7d9       0x3a .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
  .rodata._ZN9BLDCMotor11alignSensorEv.str1.1
-                0x0800c81b       0xe4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x0800c813       0xe4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
  .rodata._ZN9BLDCMotor7initFOCEv.str1.1
-                0x0800c8ff       0x90 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
- *fill*         0x0800c98f        0x1 
+                0x0800c8f7       0x90 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+ *fill*         0x0800c987        0x1 
  .rodata._ZTV9BLDCMotor
-                0x0800c990       0x28 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
-                0x0800c990                vtable for BLDCMotor
+                0x0800c988       0x28 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCMotor.cpp.o)
+                0x0800c988                vtable for BLDCMotor
  .rodata._ZTV8FOCMotor
-                0x0800c9b8       0x24 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(FOCMotor.cpp.o)
-                0x0800c9b8                vtable for FOCMotor
+                0x0800c9b0       0x24 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(FOCMotor.cpp.o)
+                0x0800c9b0                vtable for FOCMotor
  .rodata._ZZ4_sinfE10sine_array
-                0x0800c9dc       0x82 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(foc_utils.cpp.o)
- *fill*         0x0800ca5e        0x2 
+                0x0800c9d4       0x82 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(foc_utils.cpp.o)
+ *fill*         0x0800ca56        0x2 
  .rodata._ZTV14BLDCDriver3PWM
-                0x0800ca60       0x20 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
-                0x0800ca60                vtable for BLDCDriver3PWM
+                0x0800ca58       0x20 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(BLDCDriver3PWM.cpp.o)
+                0x0800ca58                vtable for BLDCDriver3PWM
  .rodata._ZTV17MagneticSensorSPI
-                0x0800ca80       0x2c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
-                0x0800ca80                vtable for MagneticSensorSPI
+                0x0800ca78       0x2c .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
+                0x0800ca78                vtable for MagneticSensorSPI
  .rodata._ZN5Print7printlnEv.str1.1
-                0x0800caac        0x3 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+                0x0800caa4        0x3 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
  .rodata._ZN5Print10printFloatIfEEjT_h.str1.1
-                0x0800caaf        0xc .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
- *fill*         0x0800cabb        0x1 
+                0x0800caa7        0xc .pio/build/genericSTM32F411CE/libFrameworkArduino.a(Print.cpp.o)
+ *fill*         0x0800cab3        0x1 
  .rodata._ZTV14HardwareSerial
-                0x0800cabc       0x2c .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
-                0x0800cabc                vtable for HardwareSerial
+                0x0800cab4       0x2c .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+                0x0800cab4                vtable for HardwareSerial
  .rodata.CSWTCH.9
-                0x0800cae8        0xc c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+                0x0800cae0        0xc c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
  .rodata.CSWTCH.8
-                0x0800caf4        0xc c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
- .rodata.Zero   0x0800cb00        0x8 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_fmod.o)
+                0x0800caec        0xc c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_atan2.o)
+ .rodata.Zero   0x0800caf8        0x8 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-ef_fmod.o)
  .rodata.atanlo
-                0x0800cb08       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+                0x0800cb00       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
  .rodata.atanhi
-                0x0800cb18       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
-                0x0800cb28                        . = ALIGN (0x4)
+                0x0800cb10       0x10 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a(libm_a-sf_atan.o)
+                0x0800cb20                        . = ALIGN (0x4)
 
-.ARM.extab      0x0800cb28        0x0
-                0x0800cb28                        . = ALIGN (0x4)
+.ARM.extab      0x0800cb20        0x0
+                0x0800cb20                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0800cb28                        . = ALIGN (0x4)
+                0x0800cb20                        . = ALIGN (0x4)
 
-.ARM            0x0800cb28        0x8
-                0x0800cb28                        . = ALIGN (0x4)
-                0x0800cb28                        __exidx_start = .
+.ARM            0x0800cb20        0x8
+                0x0800cb20                        . = ALIGN (0x4)
+                0x0800cb20                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0800cb28        0x8 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
+ .ARM.exidx     0x0800cb20        0x8 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-strlen.o)
  .ARM.exidx.text.__udivmoddi4
-                0x0800cb30        0x0 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
+                0x0800cb28        0x0 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard\libgcc.a(_udivmoddi4.o)
                                   0x8 (size before relaxing)
-                0x0800cb30                        __exidx_end = .
-                0x0800cb30                        . = ALIGN (0x4)
+                0x0800cb28                        __exidx_end = .
+                0x0800cb28                        . = ALIGN (0x4)
 
-.preinit_array  0x0800cb30        0x0
-                0x0800cb30                        . = ALIGN (0x4)
-                0x0800cb30                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0800cb28        0x0
+                0x0800cb28                        . = ALIGN (0x4)
+                0x0800cb28                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0800cb30                        PROVIDE (__preinit_array_end = .)
-                0x0800cb30                        . = ALIGN (0x4)
+                0x0800cb28                        PROVIDE (__preinit_array_end = .)
+                0x0800cb28                        . = ALIGN (0x4)
 
-.init_array     0x0800cb30       0x24
-                0x0800cb30                        . = ALIGN (0x4)
-                0x0800cb30                        PROVIDE (__init_array_start = .)
+.init_array     0x0800cb28       0x24
+                0x0800cb28                        . = ALIGN (0x4)
+                0x0800cb28                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00101
-                0x0800cb30        0x4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(main.cpp.o)
+                0x0800cb28        0x4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(main.cpp.o)
  *(.init_array*)
- .init_array    0x0800cb34        0x4 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
- .init_array    0x0800cb38        0x4 .pio/build/genericSTM32F411CE/USBDevice/src/USBSerial.cpp.o
- .init_array    0x0800cb3c        0x4 .pio/build/genericSTM32F411CE/SrcWrapper/src/stm32/interrupt.cpp.o
- .init_array    0x0800cb40        0x4 .pio/build/genericSTM32F411CE/src/main.cpp.o
- .init_array    0x0800cb44        0x4 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
- .init_array    0x0800cb48        0x4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
- .init_array    0x0800cb4c        0x4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
- .init_array    0x0800cb50        0x4 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(SPI.cpp.o)
-                0x0800cb54                        PROVIDE (__init_array_end = .)
-                0x0800cb54                        . = ALIGN (0x4)
+ .init_array    0x0800cb2c        0x4 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .init_array    0x0800cb30        0x4 .pio/build/genericSTM32F411CE/USBDevice/src/USBSerial.cpp.o
+ .init_array    0x0800cb34        0x4 .pio/build/genericSTM32F411CE/SrcWrapper/src/stm32/interrupt.cpp.o
+ .init_array    0x0800cb38        0x4 .pio/build/genericSTM32F411CE/src/main.cpp.o
+ .init_array    0x0800cb3c        0x4 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+ .init_array    0x0800cb40        0x4 .pio/build/genericSTM32F411CE/libf63/libSimple FOC.a(MagneticSensorSPI.cpp.o)
+ .init_array    0x0800cb44        0x4 .pio/build/genericSTM32F411CE/libFrameworkArduino.a(HardwareSerial.cpp.o)
+ .init_array    0x0800cb48        0x4 .pio/build/genericSTM32F411CE/lib6e0/libSPI.a(SPI.cpp.o)
+                0x0800cb4c                        PROVIDE (__init_array_end = .)
+                0x0800cb4c                        . = ALIGN (0x4)
 
-.fini_array     0x0800cb54        0xc
-                0x0800cb54                        . = ALIGN (0x4)
-                0x0800cb54                        PROVIDE (__fini_array_start = .)
+.fini_array     0x0800cb4c        0xc
+                0x0800cb4c                        . = ALIGN (0x4)
+                0x0800cb4c                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0800cb54        0x4 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
- .fini_array    0x0800cb58        0x4 .pio/build/genericSTM32F411CE/SrcWrapper/src/stm32/interrupt.cpp.o
- .fini_array    0x0800cb5c        0x4 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
-                0x0800cb60                        PROVIDE (__fini_array_end = .)
-                0x0800cb60                        . = ALIGN (0x4)
-                0x0800cb60                        _sidata = LOADADDR (.data)
+ .fini_array    0x0800cb4c        0x4 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .fini_array    0x0800cb50        0x4 .pio/build/genericSTM32F411CE/SrcWrapper/src/stm32/interrupt.cpp.o
+ .fini_array    0x0800cb54        0x4 .pio/build/genericSTM32F411CE/libf4f/libWire.a(Wire.cpp.o)
+                0x0800cb58                        PROVIDE (__fini_array_end = .)
+                0x0800cb58                        . = ALIGN (0x4)
+                0x0800cb58                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x0800cb60        0x0
- .rel.iplt      0x0800cb60        0x0 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x0800cb58        0x0
+ .rel.iplt      0x0800cb58        0x0 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000      0x300 load address 0x0800cb60
+.data           0x20000000      0x300 load address 0x0800cb58
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -6713,11 +6713,11 @@ Linker script and memory map
                 0x20000300                        . = ALIGN (0x4)
                 0x20000300                        _edata = .
 
-.igot.plt       0x20000300        0x0 load address 0x0800ce60
+.igot.plt       0x20000300        0x0 load address 0x0800ce58
  .igot.plt      0x20000300        0x0 c:/users/choel/.platformio/packages/toolchain-gccarmnoneeabi/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x20000300                        . = ALIGN (0x4)
 
-.bss            0x20000300     0x1524 load address 0x0800ce60
+.bss            0x20000300     0x1524 load address 0x0800ce58
                 0x20000300                        _sbss = .
                 0x20000300                        __bss_start__ = _sbss
  *(.bss)
