@@ -156,7 +156,7 @@ void loop() {
     // 1. FOC Update
     motor.loopFOC();
     
-    motor.move(0.0f); 
+    
 
     // 2. MPU Math
     unsigned long now = micros();
@@ -205,4 +205,19 @@ void loop() {
         Serial.print("  comp_angle_z: "); Serial.println(angle_z, 2);
         last_print = millis();
     }
+
+    // 1. Set a "Proportional Gain" (Kp) 
+    // This dictates how aggressively the motor fights back.
+    float Kp = 0.2f; 
+    
+    // 2. Calculate the target voltage based on the IMU tilt
+    // (Assuming you want to balance around the X-axis. Change theta_x to theta_y if needed)
+    float target_voltage = -Kp * theta_x; 
+    
+    // 3. Constrain the voltage for safety so it doesn't exceed your 6V limit
+    if(target_voltage > 6.0f) target_voltage = 6.0f;
+    if(target_voltage < -6.0f) target_voltage = -6.0f;
+    
+    // 4. Send the calculated voltage to the motor
+    motor.move(target_voltage);
 }
