@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include <Wire.h>
+#include <SPI.h>
 #include <SimpleFOC.h>
 
 #define MPU_ADDR 0x68
@@ -11,6 +12,7 @@ int16_t ax, ay, az, gx, gy, gz;
 float angle_x = 0.0f;
 float angle_y = 0.0f;
 float angle_z = 0.0f;
+
 BLDCDriver3PWM driver = BLDCDriver3PWM(PA0, PA1, PA2);
 BLDCMotor motor = BLDCMotor(11);
 MagneticSensorSPI encoder = MagneticSensorSPI(AS5048_SPI, PA4);
@@ -18,31 +20,28 @@ MagneticSensorSPI encoder = MagneticSensorSPI(AS5048_SPI, PA4);
 unsigned long prev_time = 0;
 
 const float Alpha = 0.98f; // complementary filter coefficient
-//poop
+
 void mpu_init() { 
     Wire.setSDA(PB7);
     Wire.setSCL(PB6);
     Wire.begin(); 
-    delay(100); // Wait for MPU6050 to power up
-    // Wake the MPU6050 — it boots in sleep mode
+    delay(100); 
+
     Wire.beginTransmission(MPU_ADDR);
-    Wire.write(0x6B); // PWR_MGMT_1 register
-    Wire.write(0x00); // Clear sleep bit
+    Wire.write(0x6B); 
+    Wire.write(0x00); 
     Wire.endTransmission(true);
 
-    // Gyro full scale: ±250°/s → sensitivity 131 LSB/°/s
     Wire.beginTransmission(MPU_ADDR);
     Wire.write(0x1B);
     Wire.write(0x00);
     Wire.endTransmission(true);
 
-    // Accel full scale: ±2g → sensitivity 16384 LSB/g
     Wire.beginTransmission(MPU_ADDR);
     Wire.write(0x1C);
     Wire.write(0x00);
     Wire.endTransmission(true);
 
-    // Digital low pass filter: 44Hz bandwidth — reduces vibration noise
     Wire.beginTransmission(MPU_ADDR);
     Wire.write(0x1A);
     Wire.write(0x03);
@@ -58,13 +57,12 @@ void mpu_read() {
     ax = (Wire.read() << 8) | Wire.read();
     ay = (Wire.read() << 8) | Wire.read();
     az = (Wire.read() << 8) | Wire.read();
-    Wire.read(); Wire.read(); // skip temperature
+    Wire.read(); Wire.read(); 
     gx = (Wire.read() << 8) | Wire.read();
     gy = (Wire.read() << 8) | Wire.read();
     gz = (Wire.read() << 8) | Wire.read();
 }
 
-// Add these globals at the top with your other globals
 float gx_offset = 0.0f;
 float gy_offset = 0.0f;
 float gz_offset = 0.0f;
@@ -72,8 +70,6 @@ float gz_offset = 0.0f;
 void calibrate() {
     Serial.println("Calibrating - hold still...");
 
-    // Wait until board is still
-    // Checks that total acceleration magnitude is within 5% of 1g
     while (true) {
         mpu_read();
         float ax_g = ax / 16384.0f;
@@ -85,7 +81,6 @@ void calibrate() {
         delay(100);
     }
 
-    // Collect 500 samples over 1 second
     long gx_sum = 0;
     long gy_sum = 0;
     long gz_sum = 0;
@@ -106,27 +101,59 @@ void calibrate() {
 
 void setup() {
     Serial.begin(115200);
+    delay(2000); // Give serial monitor time to connect
+
+    // Enable SimpleFOC debugging so we can see if initFOC succeeds
+    SimpleFOCDebug::enable(&Serial);
+
+    // 1. Initialize MPU6050
     mpu_init();
     calibrate();
     prev_time = micros();
+
+    // 2. Initialize Encoder (The SPI Fix)
+    pinMode(PA4, OUTPUT);
+    digitalWrite(PA4, HIGH);
+
+    SPI.setMISO(PA6);
+    SPI.setMOSI(PA7);
+    SPI.setSCLK(PA5);
+    SPI.begin();
+
+    encoder.init(&SPI);
+    motor.linkSensor(&encoder); // Link the fixed encoder to the motor
+
+    // 3. Initialize Motor & Driver
     driver.voltage_power_supply = 12;
     driver.pwm_frequency = 32000;
     driver.init();
     motor.linkDriver(&driver);
-    motor.controller = MotionControlType::velocity_openloop;
+    
+    // Closed-loop torque control (voltage based)
+    motor.controller = MotionControlType::torque;
     motor.voltage_limit = 6.0f;
     motor.init();
 
+    // 4. Initialize FOC
+    Serial.println("Starting FOC Calibration...");
+    motor.initFOC();
+    Serial.println("FOC Ready!");
 }
 
-
 void loop() {
-    motor.move(20.0f);
+    // 1. Main FOC algorithm function (must run as fast as possible)
+    motor.loopFOC();
+
+    // 2. Motor control (0.0f means 0 Volts applied, motor should hold still with 0 resistance)
+    // Change this to a low number like 1.0f or 2.0f to make it spin later
+    motor.move(0.0f); 
+
+    // 3. MPU Math
     unsigned long now = micros();
     float dt = (now - prev_time) / 1000000.0f;
     prev_time = now;
     mpu_read();
-       
+        
     float ax_g = ax / 16384.0f ;
     float ay_g = ay / 16384.0f ;
     float az_g = az / 16384.0f ;
@@ -134,12 +161,12 @@ void loop() {
     float gy_dps = (gy - gy_offset) / 131.0f;
     float gz_dps = (gz - gz_offset) / 131.0f;
 
-    float acc_x_ang = atan2(ay_g, az_g) * 180 / PI; // angle about x
-    float acc_y_ang = atan2(-ax_g, az_g) * 180 / PI; // angle about y
+    float acc_x_ang = atan2(ay_g, az_g) * 180 / PI; 
+    float acc_y_ang = atan2(-ax_g, az_g) * 180 / PI; 
 
-    angle_x = angle_x + gx_dps * dt; //gyroscope
-    angle_y = angle_y + gy_dps * dt; //gyroscope
-    angle_z = angle_z + gz_dps * dt; //gyroscope
+    angle_x = angle_x + gx_dps * dt; 
+    angle_y = angle_y + gy_dps * dt; 
+    angle_z = angle_z + gz_dps * dt; 
 
     float theta_x = Alpha * angle_x + (1 - Alpha) * acc_x_ang;
     float theta_y = Alpha * angle_y + (1 - Alpha) * acc_y_ang;
