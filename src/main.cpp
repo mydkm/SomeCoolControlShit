@@ -13,13 +13,42 @@ float angle_x = 0.0f;
 float angle_y = 0.0f;
 float angle_z = 0.0f;
 
+
+void initAS5048A() {
+    pinMode(PA4, OUTPUT);
+    digitalWrite(PA4, HIGH);
+    
+    SPI.setMISO(PA6);
+    SPI.setMOSI(PA7);
+    SPI.setSCLK(PA5);
+    SPI.begin();
+}
+
+float readAS5048A() {
+    SPI.beginTransaction(SPISettings(1000000, MSBFIRST, SPI_MODE1));
+    digitalWrite(PA4, LOW);
+    
+    uint16_t raw_data = SPI.transfer16(0xFFFF);
+    
+    digitalWrite(PA4, HIGH);
+    SPI.endTransaction();
+
+    uint16_t raw_angle = raw_data & 0x3FFF;
+
+    return ((float)raw_angle / 16384.0f) * _2PI; 
+}
+
+
+GenericSensor encoder = GenericSensor(readAS5048A, initAS5048A);
 BLDCDriver3PWM driver = BLDCDriver3PWM(PA0, PA1, PA2);
 BLDCMotor motor = BLDCMotor(11);
-MagneticSensorSPI encoder = MagneticSensorSPI(AS5048_SPI, PA4);
 
 unsigned long prev_time = 0;
+const float Alpha = 0.98f; 
+float gx_offset = 0.0f;
+float gy_offset = 0.0f;
+float gz_offset = 0.0f;
 
-const float Alpha = 0.98f; // complementary filter coefficient
 
 void mpu_init() { 
     Wire.setSDA(PB7);
@@ -63,10 +92,6 @@ void mpu_read() {
     gz = (Wire.read() << 8) | Wire.read();
 }
 
-float gx_offset = 0.0f;
-float gy_offset = 0.0f;
-float gz_offset = 0.0f;
-
 void calibrate() {
     Serial.println("Calibrating - hold still...");
 
@@ -76,7 +101,7 @@ void calibrate() {
         float ay_g = ay / 16384.0f;
         float az_g = az / 16384.0f;
         float magnitude = sqrt(ax_g*ax_g + ay_g*ay_g + az_g*az_g);
-        if (abs(magnitude - 1.0f) < 0.05f) break;
+        if (abs(magnitude - 1.0f) < 0.25f) break;
         Serial.println("Moving - waiting for stillness...");
         delay(100);
     }
@@ -101,57 +126,43 @@ void calibrate() {
 
 void setup() {
     Serial.begin(115200);
-    delay(2000); // Give serial monitor time to connect
+    delay(2000); 
 
-    // Enable SimpleFOC debugging so we can see if initFOC succeeds
-    SimpleFOCDebug::enable(&Serial);
-
-    // 1. Initialize MPU6050
+    // Initialize MPU6050
     mpu_init();
     calibrate();
     prev_time = micros();
 
-    // 2. Initialize Encoder (The SPI Fix)
-    pinMode(PA4, OUTPUT);
-    digitalWrite(PA4, HIGH);
+    // Initialize Custom Encoder
+    encoder.init();
+    motor.linkSensor(&encoder);
 
-    SPI.setMISO(PA6);
-    SPI.setMOSI(PA7);
-    SPI.setSCLK(PA5);
-    SPI.begin();
-
-    encoder.init(&SPI);
-    motor.linkSensor(&encoder); // Link the fixed encoder to the motor
-
-    // 3. Initialize Motor & Driver
+    // Initialize Driver
     driver.voltage_power_supply = 12;
     driver.pwm_frequency = 32000;
     driver.init();
     motor.linkDriver(&driver);
     
-    // Closed-loop torque control (voltage based)
+    // Motor settings
     motor.controller = MotionControlType::torque;
     motor.voltage_limit = 6.0f;
+    motor.voltage_sensor_align = 6.0f; 
+    
     motor.init();
-
-    // 4. Initialize FOC
-    Serial.println("Starting FOC Calibration...");
     motor.initFOC();
-    Serial.println("FOC Ready!");
 }
 
 void loop() {
-    // 1. Main FOC algorithm function (must run as fast as possible)
+    // 1. FOC Update
     motor.loopFOC();
-
-    // 2. Motor control (0.0f means 0 Volts applied, motor should hold still with 0 resistance)
-    // Change this to a low number like 1.0f or 2.0f to make it spin later
+    
     motor.move(0.0f); 
 
-    // 3. MPU Math
+    // 2. MPU Math
     unsigned long now = micros();
     float dt = (now - prev_time) / 1000000.0f;
     prev_time = now;
+    
     mpu_read();
         
     float ax_g = ax / 16384.0f ;
@@ -174,6 +185,7 @@ void loop() {
     angle_x = theta_x;
     angle_y = theta_y;
 
+    // 3. Telemetry Output
     static unsigned long last_print = 0;
     if (millis() - last_print > 500) {
         Serial.print("ax: "); Serial.print(ax_g, 4);
