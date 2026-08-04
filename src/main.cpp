@@ -8,11 +8,16 @@
 // Raw sensor output
 int16_t ax, ay, az, gx, gy, gz;
 
+unsigned long prev_time = 0;
+const float Alpha = 0.98f; 
+float gx_offset = 0.0f;
+float gy_offset = 0.0f;
+float gz_offset = 0.0f;
+
 // Complementary filter angles (degrees)
 float angle_x = 0.0f;
 float angle_y = 0.0f;
 float angle_z = 0.0f;
-
 
 void initAS5048A() {
     pinMode(PA4, OUTPUT);
@@ -38,19 +43,11 @@ float readAS5048A() {
     return ((float)raw_angle / 16384.0f) * _2PI; 
 }
 
-
 GenericSensor encoder = GenericSensor(readAS5048A, initAS5048A);
 BLDCDriver3PWM driver = BLDCDriver3PWM(PA0, PA1, PA2);
 BLDCMotor motor = BLDCMotor(11);
 
-unsigned long prev_time = 0;
-const float Alpha = 0.98f; 
-float gx_offset = 0.0f;
-float gy_offset = 0.0f;
-float gz_offset = 0.0f;
-
-
-void mpu_init() { 
+void initMPU6050() { 
     Wire.setSDA(PB7);
     Wire.setSCL(PB6);
     Wire.begin(); 
@@ -77,7 +74,7 @@ void mpu_init() {
     Wire.endTransmission(true);
 }
 
-void mpu_read() {
+void readMPU6050() {
     Wire.beginTransmission(MPU_ADDR);
     Wire.write(0x3B);
     Wire.endTransmission(false);
@@ -96,13 +93,14 @@ void calibrate() {
     Serial.println("Calibrating - hold still...");
 
     while (true) {
-        mpu_read();
+        readMPU6050();
         float ax_g = ax / 16384.0f;
         float ay_g = ay / 16384.0f;
         float az_g = az / 16384.0f;
         float magnitude = sqrt(ax_g*ax_g + ay_g*ay_g + az_g*az_g);
         if (abs(magnitude - 1.0f) < 0.25f) break;
-        Serial.println("Moving - waiting for stillness...");
+        Serial.print("Moving - waiting for stillness... Magnitude: ");
+        Serial.println(magnitude, 4);
         delay(100);
     }
 
@@ -112,7 +110,7 @@ void calibrate() {
     int samples = 500;
 
     for (int i = 0; i < samples; i++) {
-        mpu_read();
+        readMPU6050();
         gx_sum += gx;
         gy_sum += gy;
         gz_sum += gz;
@@ -129,41 +127,61 @@ void setup() {
     delay(2000); 
 
     // Initialize MPU6050
-    mpu_init();
+    initMPU6050();
     calibrate();
-    prev_time = micros();
 
-    // Initialize Custom Encoder
+    // Initialize AS5048A Encoder
     encoder.init();
     motor.linkSensor(&encoder);
 
-    // Initialize Driver
+    // Initialize DRV8313 Driver
     driver.voltage_power_supply = 12;
     driver.pwm_frequency = 32000;
     driver.init();
     motor.linkDriver(&driver);
     
     // Motor settings
-    motor.controller = MotionControlType::torque;
+    motor.controller = MotionControlType::angle;
+    motor.torque_controller = TorqueControlType::voltage;
+    motor.foc_modulation = FOCModulationType::Trapezoid_120;
     motor.voltage_limit = 6.0f;
-    motor.voltage_sensor_align = 6.0f; 
-    
+
+    motor.PID_velocity.P = 0.16f;
+    motor.PID_velocity.I = 0.001f;
+    motor.PID_velocity.D = 0.0001f; // DESTINY 2 REFERENCE!
+    motor.LPF_velocity.Tf = 0.01f;
+    motor.PID_velocity.output_ramp = 50.0f;
+    motor.PID_velocity.limit = 2.0f;
+    // motor.motion_downsample = 10;
+
+    motor.P_angle.P = 0.05f;
+    motor.P_angle.I = 0.001f;
+    motor.P_angle.D = 0.0f;
+
     motor.init();
     motor.initFOC();
+    
+    motor.P_angle.reset();
+    motor.PID_velocity.reset();
+
+    prev_time = micros();
 }
 
 void loop() {
     // 1. FOC Update
     motor.loopFOC();
     
-    
-
     // 2. MPU Math
     unsigned long now = micros();
     float dt = (now - prev_time) / 1000000.0f;
+
+    if (dt <= 0.0f || dt > 0.05f) {
+    dt = 0.001f;
+    }
+
     prev_time = now;
     
-    mpu_read();
+    readMPU6050();
         
     float ax_g = ax / 16384.0f ;
     float ay_g = ay / 16384.0f ;
@@ -188,36 +206,39 @@ void loop() {
     // 3. Telemetry Output
     static unsigned long last_print = 0;
     if (millis() - last_print > 500) {
-        Serial.print("ax: "); Serial.print(ax_g, 4);
-        Serial.print("  ay: "); Serial.print(ay_g, 4);
-        Serial.print("  az: "); Serial.print(az_g, 4);
-        Serial.print("  gx: "); Serial.print(gx_dps, 4);
-        Serial.print("  gy: "); Serial.print(gy_dps, 4);
-        Serial.print("  gz: "); Serial.println(gz_dps, 4);
+        // Serial.print("ax: "); Serial.print(ax_g, 4);
+        // Serial.print("  ay: "); Serial.print(ay_g, 4);
+        // Serial.print("  az: "); Serial.print(az_g, 4);
+        // Serial.print("  gx: "); Serial.print(gx_dps, 4);
+        // Serial.print("  gy: "); Serial.print(gy_dps, 4);
+        // Serial.print("  gz: "); Serial.println(gz_dps, 4);
 
-        Serial.print(" gyro_angle_x: "); Serial.print(angle_x, 2);
-        Serial.print(" gyro_angle_y: "); Serial.print(angle_y, 2);
-        Serial.print(" acc_angle_x: "); Serial.print(acc_x_ang, 2);
-        Serial.print(" acc_angle_y: "); Serial.println(acc_y_ang, 2);
+        // Serial.print(" gyro_angle_x: "); Serial.print(angle_x, 2);
+        // Serial.print(" gyro_angle_y: "); Serial.print(angle_y, 2);
+        // Serial.print(" acc_angle_x: "); Serial.print(acc_x_ang, 2);
+        // Serial.print(" acc_angle_y: "); Serial.println(acc_y_ang, 2);
         
-        Serial.print("comp_angle_x: "); Serial.print(theta_x, 2);
-        Serial.print("  comp_angle_y: "); Serial.print(theta_y, 2);
-        Serial.print("  comp_angle_z: "); Serial.println(angle_z, 2);
+        Serial.print("comp_angle_x: \n"); Serial.print(theta_x, 2);
+        // Serial.print("\n  comp_angle_y: \n"); Serial.print(theta_y, 2);
+        // Serial.print("  comp_angle_z: "); Serial.println(angle_z, 2);
         last_print = millis();
     }
-
-    // 1. Set a "Proportional Gain" (Kp) 
-    // This dictates how aggressively the motor fights back.
-    float Kp = 0.2f; 
     
     // 2. Calculate the target voltage based on the IMU tilt
     // (Assuming you want to balance around the X-axis. Change theta_x to theta_y if needed)
-    float target_voltage = -Kp * theta_x; 
+    float target_angle = 0.0f; 
+    float error = target_angle - theta_x;
+
+    // float target_voltage = motor.PID_velocity(target_angle);
+
+    // Serial.print("Error: "); Serial.println(error, 3);
     
-    // 3. Constrain the voltage for safety so it doesn't exceed your 6V limit
-    if(target_voltage > 6.0f) target_voltage = 6.0f;
-    if(target_voltage < -6.0f) target_voltage = -6.0f;
+    // // 3. Constrain the voltage for safety so it doesn't exceed your 6V limit
+    // if (target_voltage > 6.0f) 
+    //     target_voltage = 6.0f;
+    // if (target_voltage < -6.0f) 
+    //     target_voltage = -6.0f;
     
-    // 4. Send the calculated voltage to the motor
-    motor.move(target_voltage);
+    // 3. Send the calculated voltage to the motor
+    motor.move(error);
 }
